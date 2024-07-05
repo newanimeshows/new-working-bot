@@ -13,12 +13,9 @@ from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
-import pyrogram.utils
-
-pyrogram.utils.MIN_CHANNEL_ID = -1009147483647
 
 
-name = """By @LeadModerator"""
+name = """By @Madflix_Bots From Telegram"""
 
 
 class Bot(Client):
@@ -54,7 +51,7 @@ class Bot(Client):
                 self.LOGGER(__name__).warning(
                     f"Please Double check the FORCE_SUB_CHANNEL value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL}")
                 self.LOGGER(__name__).info(
-                    "\nBot Stopped. @DarkHumorHub_bot for support")
+                    "\nBot Stopped. https://t.me/MadflixBots_Support for support")
                 sys.exit()
 
         try:
@@ -67,12 +64,12 @@ class Bot(Client):
             self.LOGGER(__name__).warning(
                 f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
             self.LOGGER(__name__).info(
-                "\nBot Stopped. Join @DarkHumorHub_bot for support")
+                "\nBot Stopped. Text me at @LeadModerator for support")
             sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
         self.LOGGER(__name__).info(
-            f"Bot Running..!\n\nCreated by \nhttps://t.me/Madflix_Bots")
+            f"Bot Running..!\n\nCreated by \n@LeadModerator")
         self.LOGGER(__name__).info(f"""▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂""")
         self.username = usr_bot_me.username
         # web-response

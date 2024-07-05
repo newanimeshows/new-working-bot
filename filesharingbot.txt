@@ -26,3 +26,13 @@ https://t.me/DarkHumorHub_bot
 Created by 
 https://t.me/Madflix_Bots
 [05-Jul-24 13:33:48 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 13:40:41 - WARNING] - pyrogram.session.session - [Bot] Waiting for 3 seconds before continuing (required by "messages.EditMessage")
+[05-Jul-24 13:40:44 - WARNING] - pyrogram.session.session - [Bot] Waiting for 3 seconds before continuing (required by "messages.EditMessage")
+[05-Jul-24 13:40:47 - INFO] - bot - Bot stopped.
+[05-Jul-24 15:19:40 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/Madflix_Bots
+[05-Jul-24 15:19:40 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 15:51:44 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 15:51:44 - INFO] - bot - Bot stopped.

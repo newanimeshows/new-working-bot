@@ -10,26 +10,28 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
-APP_ID = int(os.environ.get("APP_ID", ""))
-API_HASH = os.environ.get("API_HASH", "")
+TG_BOT_TOKEN = os.environ.get(
+    "TG_BOT_TOKEN", "7417963088:AAE2lygRlMaWUU_YIiDP5MA3uQZjfEtFTsg")
+APP_ID = int(os.environ.get("APP_ID", "29854472"))
+API_HASH = os.environ.get("API_HASH", "510fdff9278e9ca889c6cab3f6b83e43")
 
 
-OWNER = os.environ.get("OWNER", "@LeadModerator")  # Owner username
+OWNER = os.environ.get("OWNER", "@LeadModrator")  # Owner username
 OWNER_ID = int(os.environ.get("OWNER_ID", "7034554886"))  # Owner user id
-DB_URL = os.environ.get("DB_URL", "")
-DB_NAME = os.environ.get("DB_NAME", "madflixbotz")
+DB_URL = os.environ.get(
+    "DB_URL", "mongodb+srv://anmolap12:anmolap12@asv.w3vti6x.mongodb.net/?retryWrites=true&w=majority&appName=asv")
+DB_NAME = os.environ.get("DB_NAME", "asv")
 
 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002174448712"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1001818664655"))
 
 
 SECONDS = int(os.getenv("SECONDS", "600"))  # auto delete in seconds
 
 
 PORT = os.environ.get("PORT", "8080")
-TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "1"))
+TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "2"))
 
 
 START_MSG = os.environ.get(
@@ -37,7 +39,7 @@ START_MSG = os.environ.get(
 
 try:
     ADMINS = [7034554886]
-    for x in (os.environ.get("ADMINS", "6693837367").split()):
+    for x in (os.environ.get("ADMINS", "6693837367 6450266465").split()):
         ADMINS.append(int(x))
 except ValueError:
     raise Exception("Your Admins list does not contain valid integers.")
@@ -80,3 +82,10 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
+
+
+# Jishu Developer
+# Don't Remove Credit 🥺
+# Telegram Channel @Madflix_Bots
+# Backup Channel @JishuBotz
+# Developer @JishuDeveloper
