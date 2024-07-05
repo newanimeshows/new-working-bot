@@ -13,3 +13,8 @@ dnspython
 
 # --- For-Web-Response ------- #
 aiohttp
+
+
+
+
+python-dotenv
