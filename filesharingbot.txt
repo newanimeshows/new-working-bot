@@ -36,3 +36,19 @@ https://t.me/Madflix_Bots
 [05-Jul-24 15:19:40 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
 [05-Jul-24 15:51:44 - INFO] - root - Stop signal received (SIGINT). Exiting...
 [05-Jul-24 15:51:44 - INFO] - bot - Bot stopped.
+[05-Jul-24 16:20:42 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 16:20:42 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 16:23:57 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 16:23:57 - INFO] - bot - Bot stopped.
+[05-Jul-24 16:30:24 - WARNING] - bot - Peer id invalid: -1002174448712
+[05-Jul-24 16:30:24 - WARNING] - bot - Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value -1002174448712
+[05-Jul-24 16:30:24 - INFO] - bot - 
+Bot Stopped. Text me at @LeadModerator for support
+[05-Jul-24 16:31:17 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 16:31:17 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
