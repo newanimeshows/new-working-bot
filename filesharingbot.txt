@@ -134,3 +134,1347 @@ Created by
 [05-Jul-24 20:24:42 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
 [05-Jul-24 20:24:54 - INFO] - root - Stop signal received (SIGINT). Exiting...
 [05-Jul-24 20:24:54 - INFO] - bot - Bot stopped.
+[05-Jul-24 21:15:35 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 21:15:35 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 21:16:25 - ERROR] - pyrogram.dispatcher - SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6688151e86aa1cd179102a55, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 174, in get_users
+    users = await full_userbase()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 33, in full_userbase
+    for doc in user_docs:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2483, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6688151e86aa1cd179102a55, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[05-Jul-24 21:16:47 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:51 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:51 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:52 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:52 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:52 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:53 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:53 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:53 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:53 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:54 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:16:55 - ERROR] - pyrogram.dispatcher - SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6688151e86aa1cd179102a55, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 174, in get_users
+    users = await full_userbase()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 33, in full_userbase
+    for doc in user_docs:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2483, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6688151e86aa1cd179102a55, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[05-Jul-24 21:16:56 - INFO] - bot - Bot stopped.
+[05-Jul-24 21:17:05 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 21:17:05 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 21:17:47 - ERROR] - pyrogram.dispatcher - SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6688157850101a61b6c94a0a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2483, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6688157850101a61b6c94a0a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[05-Jul-24 21:18:43 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:18:44 - INFO] - bot - Bot stopped.
+[05-Jul-24 21:19:59 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 21:19:59 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 21:20:38 - ERROR] - pyrogram.dispatcher - SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66881626d5449ca42f20780f, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2483, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66881626d5449ca42f20780f, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[05-Jul-24 21:21:09 - ERROR] - pyrogram.dispatcher - SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66881626d5449ca42f20780f, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2483, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66881626d5449ca42f20780f, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[05-Jul-24 21:21:12 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:21:12 - INFO] - bot - Bot stopped.
+[05-Jul-24 21:45:52 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 21:45:52 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 21:46:58 - ERROR] - pyrogram.dispatcher - SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66881c3781e565a33ea4e082, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2483, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66881c3781e565a33ea4e082, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[05-Jul-24 21:47:41 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:47:41 - INFO] - bot - Bot stopped.
+[05-Jul-24 21:47:48 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 21:47:48 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 21:48:27 - ERROR] - pyrogram.dispatcher - SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66881cab65e312346c2d41d7, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2483, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66881cab65e312346c2d41d7, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[05-Jul-24 21:48:33 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 21:48:34 - INFO] - bot - Bot stopped.
+[05-Jul-24 21:52:55 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 21:52:55 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 21:54:49 - ERROR] - pyrogram.dispatcher - bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2485, in _read
+    with self._client._conn_from_server(self._read_pref, self._server, self._session) as (
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1357, in _conn_from_server
+    with self._checkout(server, session) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1266, in _checkout
+    with server.checkout(handler=err_handler) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1767, in checkout
+    conn = self._get_conn(checkout_started_time, handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1926, in _get_conn
+    conn = self.connect(handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1729, in connect
+    conn.authenticate()
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1099, in authenticate
+    auth.authenticate(creds, self, reauthenticate=reauthenticate)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 656, in authenticate
+    auth_func(credentials, conn)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 560, in _authenticate_default
+    return _authenticate_scram(credentials, conn, "SCRAM-SHA-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 338, in _authenticate_scram
+    res = conn.command(source, cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 342, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 989, in command
+    return command(
+           ^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\network.py", line 212, in command
+    helpers._check_command_response(
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 248, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+[05-Jul-24 21:54:55 - ERROR] - pyrogram.dispatcher - bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 174, in get_users
+    users = await full_userbase()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 33, in full_userbase
+    for doc in user_docs:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2485, in _read
+    with self._client._conn_from_server(self._read_pref, self._server, self._session) as (
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1357, in _conn_from_server
+    with self._checkout(server, session) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1266, in _checkout
+    with server.checkout(handler=err_handler) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1767, in checkout
+    conn = self._get_conn(checkout_started_time, handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1926, in _get_conn
+    conn = self.connect(handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1729, in connect
+    conn.authenticate()
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1099, in authenticate
+    auth.authenticate(creds, self, reauthenticate=reauthenticate)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 656, in authenticate
+    auth_func(credentials, conn)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 560, in _authenticate_default
+    return _authenticate_scram(credentials, conn, "SCRAM-SHA-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 338, in _authenticate_scram
+    res = conn.command(source, cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 342, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 989, in command
+    return command(
+           ^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\network.py", line 212, in command
+    helpers._check_command_response(
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 248, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+[05-Jul-24 21:56:15 - ERROR] - pyrogram.dispatcher - bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2485, in _read
+    with self._client._conn_from_server(self._read_pref, self._server, self._session) as (
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1357, in _conn_from_server
+    with self._checkout(server, session) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1266, in _checkout
+    with server.checkout(handler=err_handler) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1767, in checkout
+    conn = self._get_conn(checkout_started_time, handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1926, in _get_conn
+    conn = self.connect(handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1729, in connect
+    conn.authenticate()
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1099, in authenticate
+    auth.authenticate(creds, self, reauthenticate=reauthenticate)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 656, in authenticate
+    auth_func(credentials, conn)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 560, in _authenticate_default
+    return _authenticate_scram(credentials, conn, "SCRAM-SHA-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 338, in _authenticate_scram
+    res = conn.command(source, cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 342, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 989, in command
+    return command(
+           ^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\network.py", line 212, in command
+    helpers._check_command_response(
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 248, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+[05-Jul-24 21:56:31 - ERROR] - pyrogram.dispatcher - bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2485, in _read
+    with self._client._conn_from_server(self._read_pref, self._server, self._session) as (
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1357, in _conn_from_server
+    with self._checkout(server, session) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1266, in _checkout
+    with server.checkout(handler=err_handler) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1767, in checkout
+    conn = self._get_conn(checkout_started_time, handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1926, in _get_conn
+    conn = self.connect(handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1729, in connect
+    conn.authenticate()
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1099, in authenticate
+    auth.authenticate(creds, self, reauthenticate=reauthenticate)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 656, in authenticate
+    auth_func(credentials, conn)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 560, in _authenticate_default
+    return _authenticate_scram(credentials, conn, "SCRAM-SHA-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 338, in _authenticate_scram
+    res = conn.command(source, cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 342, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 989, in command
+    return command(
+           ^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\network.py", line 212, in command
+    helpers._check_command_response(
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 248, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+[05-Jul-24 21:56:35 - ERROR] - pyrogram.dispatcher - bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2485, in _read
+    with self._client._conn_from_server(self._read_pref, self._server, self._session) as (
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1357, in _conn_from_server
+    with self._checkout(server, session) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1266, in _checkout
+    with server.checkout(handler=err_handler) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1767, in checkout
+    conn = self._get_conn(checkout_started_time, handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1926, in _get_conn
+    conn = self.connect(handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1729, in connect
+    conn.authenticate()
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1099, in authenticate
+    auth.authenticate(creds, self, reauthenticate=reauthenticate)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 656, in authenticate
+    auth_func(credentials, conn)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 560, in _authenticate_default
+    return _authenticate_scram(credentials, conn, "SCRAM-SHA-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 338, in _authenticate_scram
+    res = conn.command(source, cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 342, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 989, in command
+    return command(
+           ^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\network.py", line 212, in command
+    helpers._check_command_response(
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 248, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+[05-Jul-24 21:56:46 - ERROR] - pyrogram.dispatcher - bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2485, in _read
+    with self._client._conn_from_server(self._read_pref, self._server, self._session) as (
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1357, in _conn_from_server
+    with self._checkout(server, session) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1266, in _checkout
+    with server.checkout(handler=err_handler) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1767, in checkout
+    conn = self._get_conn(checkout_started_time, handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1926, in _get_conn
+    conn = self.connect(handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1729, in connect
+    conn.authenticate()
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1099, in authenticate
+    auth.authenticate(creds, self, reauthenticate=reauthenticate)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 656, in authenticate
+    auth_func(credentials, conn)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 560, in _authenticate_default
+    return _authenticate_scram(credentials, conn, "SCRAM-SHA-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 338, in _authenticate_scram
+    res = conn.command(source, cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 342, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 989, in command
+    return command(
+           ^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\network.py", line 212, in command
+    helpers._check_command_response(
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 248, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+[05-Jul-24 21:57:00 - ERROR] - pyrogram.dispatcher - bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2485, in _read
+    with self._client._conn_from_server(self._read_pref, self._server, self._session) as (
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1357, in _conn_from_server
+    with self._checkout(server, session) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1266, in _checkout
+    with server.checkout(handler=err_handler) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1767, in checkout
+    conn = self._get_conn(checkout_started_time, handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1926, in _get_conn
+    conn = self.connect(handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1729, in connect
+    conn.authenticate()
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1099, in authenticate
+    auth.authenticate(creds, self, reauthenticate=reauthenticate)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 656, in authenticate
+    auth_func(credentials, conn)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 560, in _authenticate_default
+    return _authenticate_scram(credentials, conn, "SCRAM-SHA-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 338, in _authenticate_scram
+    res = conn.command(source, cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 342, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 989, in command
+    return command(
+           ^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\network.py", line 212, in command
+    helpers._check_command_response(
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 248, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+[05-Jul-24 22:07:49 - ERROR] - pyrogram.dispatcher - bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2485, in _read
+    with self._client._conn_from_server(self._read_pref, self._server, self._session) as (
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1357, in _conn_from_server
+    with self._checkout(server, session) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1266, in _checkout
+    with server.checkout(handler=err_handler) as conn:
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1767, in checkout
+    conn = self._get_conn(checkout_started_time, handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1926, in _get_conn
+    conn = self.connect(handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1729, in connect
+    conn.authenticate()
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 1099, in authenticate
+    auth.authenticate(creds, self, reauthenticate=reauthenticate)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 656, in authenticate
+    auth_func(credentials, conn)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 560, in _authenticate_default
+    return _authenticate_scram(credentials, conn, "SCRAM-SHA-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\auth.py", line 338, in _authenticate_scram
+    res = conn.command(source, cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 342, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 989, in command
+    return command(
+           ^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\network.py", line 212, in command
+    helpers._check_command_response(
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 248, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+[05-Jul-24 22:10:54 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 22:10:55 - INFO] - bot - Bot stopped.
+[05-Jul-24 22:11:41 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 22:11:41 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 22:12:21 - ERROR] - pyrogram.dispatcher - SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66882244751e47c8af777ab4, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2483, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66882244751e47c8af777ab4, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[05-Jul-24 22:13:05 - ERROR] - pyrogram.dispatcher - SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66882244751e47c8af777ab4, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2483, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 66882244751e47c8af777ab4, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[05-Jul-24 22:13:34 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 22:13:34 - INFO] - bot - Bot stopped.
+[05-Jul-24 22:15:35 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 22:15:35 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂
+[05-Jul-24 22:16:37 - ERROR] - pyrogram.dispatcher - SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6688232e2d88720708c212c5, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "E:\File-Sharing-Bot\plugins\start.py", line 32, in start_command
+    if not await present_user(id):
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\File-Sharing-Bot\database\database.py", line 23, in present_user
+    found = user_data.find_one({'_id': user_id})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 1495, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1243, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1160, in _refresh
+    self.__send_message(q)
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\cursor.py", line 1039, in __send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1431, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1540, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2483, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anmol\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6688232e2d88720708c212c5, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-vgg236u-shard-00-00.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-00.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-01.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-01.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-vgg236u-shard-00-02.w3vti6x.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-vgg236u-shard-00-02.w3vti6x.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1002) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[05-Jul-24 22:18:53 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[05-Jul-24 22:18:54 - INFO] - bot - Bot stopped.
+[05-Jul-24 22:25:31 - INFO] - bot - Bot Running..!
+
+Created by 
+@LeadModerator
+[05-Jul-24 22:25:31 - INFO] - bot - ▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂

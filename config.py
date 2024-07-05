@@ -8,23 +8,24 @@
 import os
 import logging
 from logging.handlers import RotatingFileHandler
+from dotenv import load_dotenv
+from pymongo import MongoClient
+
+load_dotenv()
+
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
+APP_ID = int(os.environ.get("APP_ID", ""))
+API_HASH = os.environ.get("API_HASH", "")
 
 
-TG_BOT_TOKEN = os.environ.get(
-    "TG_BOT_TOKEN", "7417963088:AAE2lygRlMaWUU_YIiDP5MA3uQZjfEtFTsg")
-APP_ID = int(os.environ.get("APP_ID", "29854472"))
-API_HASH = os.environ.get("API_HASH", "510fdff9278e9ca889c6cab3f6b83e43")
-
-
-OWNER = os.environ.get("OWNER", "@LeadModrator")  # Owner username
+OWNER = os.environ.get("OWNER", "@LeadModerator")  # Owner username
 OWNER_ID = int(os.environ.get("OWNER_ID", "7034554886"))  # Owner user id
-DB_URL = os.environ.get(
-    "DB_URL", "mongodb+srv://anmolap12:anmolap12@asv.w3vti6x.mongodb.net/?retryWrites=true&w=majority&ssl=true&appName=asv")
-DB_NAME = os.environ.get("DB_NAME", "asv")
+DB_URL = os.environ.get("DB_URL", "")
+DB_NAME = os.environ.get("DB_NAME", "madflixbotz")
 
 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002174448712"))
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1001818664655"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 
 
 SECONDS = int(os.getenv("SECONDS", "600"))  # auto delete in seconds
@@ -34,8 +35,9 @@ PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "2"))
 
 
+# start message
 START_MSG = os.environ.get(
-    "START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
+    "START_MESSAGE", "<b>ʜᴇʟʟᴏ {first}\n\n ɪ ᴀᴍ ᴍᴜʟᴛɪ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ , ɪ ᴄᴀɴ sᴛᴏʀᴇ ᴘʀɪᴠᴀᴛᴇ ғɪʟᴇs ɪɴ sᴘᴇᴄɪғɪᴇᴅ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴏᴛʜᴇʀ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss ɪᴛ ғʀᴏᴍ sᴘᴇᴄɪᴀʟ ʟɪɴᴋ » @AnimeStreamVault</b>")
 
 try:
     ADMINS = [7034554886]
@@ -82,6 +84,14 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
+
+
+try:
+    client = MongoClient(DB_URL)
+    db = client.get_database()
+    print("Connected to MongoDB successfully!")
+except Exception as e:
+    print(f"Error connecting to MongoDB: {e}")
 
 
 # Jishu Developer
