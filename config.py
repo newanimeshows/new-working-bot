@@ -10,6 +10,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 from dotenv import load_dotenv
 from pymongo import MongoClient
+import pymongo
+
 
 load_dotenv()
 
@@ -20,8 +22,9 @@ API_HASH = os.environ.get("API_HASH", "")
 
 OWNER = os.environ.get("OWNER", "@LeadModerator")  # Owner username
 OWNER_ID = int(os.environ.get("OWNER_ID", "7034554886"))  # Owner user id
-DB_URL = os.environ.get("DB_URL", "")
-DB_NAME = os.environ.get("DB_NAME", "madflixbotz")
+DB_URL = os.environ.get(
+    "DB_URL", "")
+DB_NAME = os.environ.get("DB_NAME", "")
 
 
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
@@ -87,9 +90,10 @@ def LOGGER(name: str) -> logging.Logger:
 
 
 try:
-    client = MongoClient(DB_URL)
-    db = client.get_database()
-    print("Connected to MongoDB successfully!")
+    # Connect to MongoDB
+    client = pymongo.MongoClient(DB_URL)
+    db = client[DB_NAME]  # Specify the database to use
+    print("Connected to MongoDB!")
 except Exception as e:
     print(f"Error connecting to MongoDB: {e}")
 
