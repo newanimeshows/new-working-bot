@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "start.sh",
+        "src": "main.py",
         "use": "@vercel/static-build"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "start.sh"
+        "dest": "main.py"
       }
     ]
   }
