@@ -22,8 +22,7 @@ API_HASH = os.environ.get("API_HASH", "")
 
 OWNER = os.environ.get("OWNER", "@LeadModerator")  # Owner username
 OWNER_ID = int(os.environ.get("OWNER_ID", "7034554886"))  # Owner user id
-DB_URL = os.environ.get(
-    "DB_URL", "")
+DB_URL = os.environ.get("DB_URL", "")
 DB_NAME = os.environ.get("DB_NAME", "")
 
 
