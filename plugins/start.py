@@ -96,7 +96,7 @@ async def start_command(client: Client, message: Message):
                 pass
 
         # Inform the user about deletion and wait for SECONDS before deleting
-        k = await client.send_message(chat_id=message.from_user.id, text="<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nᴛʜɪs ᴠɪᴅᴇᴏ / ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ 10 ᴍɪɴᴜᴛᴇs (ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs).\n\n📌 ᴘʟᴇᴀsᴇ ꜰᴏʀᴡᴀʀᴅ ᴛʜɪs ᴠɪᴅᴇᴏ / ꜰɪʟᴇ ᴛᴏ sᴏᴍᴇᴡʜᴇʀᴇ ᴇʟsᴇ ᴀɴᴅ sᴛᴀʀᴛ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴛʜᴇʀᴇ.", parse_mode=ParseMode.HTML)
+        k = await client.send_message(chat_id=message.from_user.id, text="<b>❗️ <u>ᴜʀɢᴇɴᴛ</u> ❗️</b>\n\nʏᴏ, ʟɪsᴛᴇɴ ᴜᴘ! ᴛʜɪs ᴇᴘɪsᴏᴅᴇ / ꜰɪʟᴇ ɪs ᴏɴ ᴛʜᴇ ᴄʜᴏᴘᴘɪɴɢ ʙʟᴏᴄᴋ, sᴇᴛ ᴛᴏ ᴠᴀɴɪsʜ ɪɴ 10 ᴍɪɴᴜᴛᴇs (ᴛʜᴀɴᴋs ᴛᴏ ᴘᴇsᴋʏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs).\n\n📌 ʜᴜʀʀʏ ᴀɴᴅ sᴘʀᴇᴀᴅ ɪᴛ ᴛᴏ ᴀɴᴏᴛʜᴇʀ ᴘʟᴀᴄᴇ, sᴛᴀʀᴛ ᴛʜᴇ ᴅᴏᴡɴʟᴏᴀᴅ ᴀsᴀᴘ!", parse_mode=ParseMode.HTML)
         await asyncio.sleep(SECONDS)
 
         # Delete each file and update the user
@@ -106,7 +106,7 @@ async def start_command(client: Client, message: Message):
             except:
                 pass
 
-        await k.edit_text("Wᴇ ᴀᴘᴏʟᴏɢɪᴢᴇ, ʙᴜᴛ ᴀʟʟ ʏᴏᴜʀ ᴠɪᴅᴇᴏs / ғɪʟᴇs ʜᴀᴠᴇ ʙᴇᴇɴ ᴅᴇʟᴇᴛᴇᴅ ᴀs ʀᴇᴏ̨ᴜᴇsᴛᴇᴅ.\n\nBᴜᴛ ʏᴏᴜ ᴄᴀɴ ɢᴇᴛ ᴛʜᴇ ғɪʟᴇs ᴀɢᴀɪɴ ʙʏ ʀᴇᴏ̨ᴜᴇsᴛɪɴɢ ᴛʜᴇᴍ ᴀɢᴀɪɴ...")
+        await k.edit_text("Nᴀɴɪ???😨😧 \nMʏ ᴀɴɪᴍᴇ ᴄᴏʟʟᴇᴄᴛɪᴏɴ? ᴅᴜsᴛ! Dᴀᴛᴀ ɢʀᴇᴍʟɪɴs, ᴛʜɪs ɪs ᴀ sʜᴀʀɪɴɢᴀɴ-ʟᴇᴠᴇʟ ᴏꜰꜰᴇɴsᴇ! \n\nOɴᴇ ʀᴇϙᴜᴇsᴛ, ᴀɴᴅ ᴍʏ ʙᴀɴᴋᴀɪ ᴏꜰ ᴠᴇɴɢᴇᴀɴᴄᴇ ʀᴇsᴛᴏʀᴇs ᴡᴀɪꜰᴜs ᴀɴᴅ ʙᴀᴛᴛʟᴇs! Yᴏᴜ ᴡɪʟʟ ʀᴇɢʀᴇᴛ ᴛʜɪs!   🔥💪")
 
         # Clear the sent messages list after deletion
         sent_messages.clear()
