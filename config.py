@@ -30,7 +30,7 @@ DB_NAME = os.environ.get("DB_NAME", "Dev")
 
 
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", ""))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1001818664655"))
 
 
 SECONDS = int(os.getenv("SECONDS", "600"))  # auto delete in seconds
