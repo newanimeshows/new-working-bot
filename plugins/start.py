@@ -12,12 +12,11 @@ from database.database import add_user, del_user, full_userbase, present_user
 # Add time in seconds to wait before deleting
 SECONDS = int(os.getenv("SECONDS", "600"))  # Default 600 seconds (10 minutes)
 
-
 # Track sent messages globally
 sent_messages = []
 
 
-@Bot.on_message(filters.command('start') & filters.private & subscribed)
+@Bot.on_message(filters.command('start') & filters.private)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
     if not await present_user(id):
@@ -111,78 +110,62 @@ async def start_command(client: Client, message: Message):
         # Clear the sent messages list after deletion
         sent_messages.clear()
 
-        return
-
     else:
-        # Handle commands when user starts without a specific request
-        reply_markup = InlineKeyboardMarkup(
-            [
+        if await subscribed(client, message):
+            # Handle commands when user starts without a specific request
+            reply_markup = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            "⚡️🇦​​​​​🇧​​​​​🇴​​​​​🇺​​​​​🇹​​​​​ 🇲​​​​​🇪​​​​⚡️​", callback_data="about"),
+                        InlineKeyboardButton(
+                            "❌ 🇨​​​​​🇱​​​​​🇴​​​​​🇸​​​​​🇪​​​​ ❌ ​", callback_data="close")
+                    ]
+                ]
+            )
+            await message.reply_text(
+                text=START_MSG.format(
+                    first=message.from_user.first_name,
+                    last=message.from_user.last_name,
+                    username=None if not message.from_user.username else '@' + message.from_user.username,
+                    mention=message.from_user.mention,
+                    id=message.from_user.id
+                ),
+                reply_markup=reply_markup,
+                disable_web_page_preview=True,
+                quote=True
+            )
+        else:
+            buttons = [
                 [
                     InlineKeyboardButton(
-                        "⚡️🇦​​​​​🇧​​​​​🇴​​​​​🇺​​​​​🇹​​​​​ 🇲​​​​​🇪​​​​⚡️​", callback_data="about"),
-                    InlineKeyboardButton(
-                        "❌ 🇨​​​​​🇱​​​​​🇴​​​​​🇸​​​​​🇪​​​​ ❌ ​", callback_data="close")
+                        text="Join Channel", url=client.invitelink)
                 ]
             ]
-        )
-        await message.reply_text(
-            text=START_MSG.format(
-                first=message.from_user.first_name,
-                last=message.from_user.last_name,
-                username=None if not message.from_user.username else '@' + message.from_user.username,
-                mention=message.from_user.mention,
-                id=message.from_user.id
-            ),
-            reply_markup=reply_markup,
-            disable_web_page_preview=True,
-            quote=True
-        )
-        return
-
-# Other command handlers for your bot...
-
-# =====================================================================================##
-
-# Define constants for messages and errors
-WAIT_MSG = """"<b>Processing ...</b>"""
-REPLY_ERROR = """<code>Use this command as a reply to any telegram message without any spaces.</code>"""
-
-# =====================================================================================##
-
-# Handle the case where user starts but hasn't joined the required channel
-
-
-@Bot.on_message(filters.command('start') & filters.private)
-async def not_joined(client: Client, message: Message):
-    buttons = [
-        [
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink)
-        ]
-    ]
-    try:
-        buttons.append(
-            [
-                InlineKeyboardButton(
-                    text='Try Again',
-                    url=f"https://t.me/{client.username}?start={message.command[1]}"
+            try:
+                buttons.append(
+                    [
+                        InlineKeyboardButton(
+                            text='Try Again',
+                            url=f"https://t.me/{client.username}?start={message.command[1]}"
+                        )
+                    ]
                 )
-            ]
-        )
-    except IndexError:
-        pass
+            except IndexError:
+                pass
 
-    await message.reply(
-        text=FORCE_MSG.format(
-            first=message.from_user.first_name,
-            last=message.from_user.last_name,
-            username=None if not message.from_user.username else '@' + message.from_user.username,
-            mention=message.from_user.mention,
-            id=message.from_user.id
-        ),
-        reply_markup=InlineKeyboardMarkup(buttons),
-        quote=True,
-        disable_web_page_preview=True
-    )
+            await message.reply(
+                text=FORCE_MSG.format(
+                    first=message.from_user.first_name,
+                    last=message.from_user.last_name,
+                    username=None if not message.from_user.username else '@' + message.from_user.username,
+                    mention=message.from_user.mention,
+                    id=message.from_user.id
+                ),
+                reply_markup=InlineKeyboardMarkup(buttons),
+                quote=True,
+                disable_web_page_preview=True
+            )
 
 # Admin commands to manage users and broadcast messages
 
