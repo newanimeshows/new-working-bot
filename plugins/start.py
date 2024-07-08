@@ -4,7 +4,6 @@
 # Backup Channel @JishuBotz
 # Developer @JishuDeveloper
 
-
 import os
 import asyncio
 from pyrogram import Client, filters, __version__
@@ -16,10 +15,9 @@ from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
 
-
-# add time im seconds for waitingwaiting before delete
-# 1 minutes = 60, 2 minutes = 60×2=120, 5 minutes = 60×5=300
-SECONDS = int(os.getenv("SECONDS", "600"))
+# add time im seconds for waiting before delete
+# 1 minute = 60, 2 minutes = 60×2=120, 5 minutes = 60×5=300
+SECONDS = int(os.getenv("SECONDS", "60"))
 
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
@@ -45,7 +43,7 @@ async def start_command(client: Client, message: Message):
             except:
                 return
             if start <= end:
-                ids = range(start, end+1)
+                ids = range(start, end + 1)
             else:
                 ids = []
                 i = start
@@ -67,8 +65,9 @@ async def start_command(client: Client, message: Message):
             return
         await temp_msg.delete()
 
-        for msg in messages:
+        sent_messages = []  # Initialize the sent_messages list
 
+        for msg in messages:
             if bool(CUSTOM_CAPTION) & bool(msg.document):
                 caption = CUSTOM_CAPTION.format(
                     previouscaption="" if not msg.caption else msg.caption.html, filename=msg.document.file_name)
@@ -82,13 +81,16 @@ async def start_command(client: Client, message: Message):
 
             try:
                 f = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
+                sent_messages.append(f)  # Add the sent message to the list
 
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 f = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
+                sent_messages.append(f)  # Add the sent message to the list
 
             except:
                 pass
+
         # Inform the user about deletion and wait for SECONDS before deleting
         k = await client.send_message(chat_id=message.from_user.id, text="<b>❗️ <u>ᴜʀɢᴇɴᴛ</u> ❗️</b>\n\nʏᴏ, ʟɪsᴛᴇɴ ᴜᴘ! ᴛʜɪs ᴇᴘɪsᴏᴅᴇ / ꜰɪʟᴇ ɪs ᴏɴ ᴛʜᴇ ᴄʜᴏᴘᴘɪɴɢ ʙʟᴏᴄᴋ, sᴇᴛ ᴛᴏ ᴠᴀɴɪsʜ ɪɴ 10 ᴍɪɴᴜᴛᴇs (ᴛʜᴀɴᴋs ᴛᴏ ᴘᴇsᴋʏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs).\n\n📌 ʜᴜʀʀʏ ᴀɴᴅ sᴘʀᴇᴀᴅ ɪᴛ ᴛᴏ ᴀɴᴏᴛʜᴇʀ ᴘʟᴀᴄᴇ, sᴛᴀʀᴛ ᴛʜᴇ ᴅᴏᴡɴʟᴏᴀᴅ ᴀsᴀᴘ!", parse_mode=ParseMode.HTML)
         await asyncio.sleep(SECONDS)
@@ -101,9 +103,6 @@ async def start_command(client: Client, message: Message):
                 pass
 
         await k.edit_text("Nᴀɴɪ???😨😧 \nMʏ ᴀɴɪᴍᴇ ᴄᴏʟʟᴇᴄᴛɪᴏɴ? ᴅᴜsᴛ! Dᴀᴛᴀ ɢʀᴇᴍʟɪɴs, ᴛʜɪs ɪs ᴀ sʜᴀʀɪɴɢᴀɴ-ʟᴇᴠᴇʟ ᴏꜰꜰᴇɴsᴇ! \n\nOɴᴇ ʀᴇϙᴜᴇsᴛ, ᴀɴᴅ ᴍʏ ʙᴀɴᴋᴀɪ ᴏꜰ ᴠᴇɴɢᴇᴀɴᴄᴇ ʀᴇsᴛᴏʀᴇs ᴡᴀɪꜰᴜs ᴀɴᴅ ʙᴀᴛᴛʟᴇs! Yᴏᴜ ᴡɪʟʟ ʀᴇɢʀᴇᴛ ᴛʜɪs!   🔥💪")
-
-        # Clear the sent messages list after deletion
-        sent_messages.clear()
 
     else:
         if await subscribed(client, message):
@@ -137,7 +136,7 @@ async def start_command(client: Client, message: Message):
 
 WAIT_MSG = """"<b>Processing ...</b>"""
 
-REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
+REPLY_ERROR = """<code>Use this command as a replay to any telegram message without any spaces.</code>"""
 
 # =====================================================================================##
 
@@ -213,13 +212,13 @@ async def send_text(client: Bot, message: Message):
                 pass
             total += 1
 
-        status = f"""<b><u>Broadcast Completed</u>
+        status = f"""<b><u>Broadcast Completed</u></b>
 
-Total Users: <code>{total}</code>
-Successful: <code>{successful}</code>
-Blocked Users: <code>{blocked}</code>
-Deleted Accounts: <code>{deleted}</code>
-Unsuccessful: <code>{unsuccessful}</code></b>"""
+<b>Total Users:</b> <code>{total}</code>
+<b>Successful:</b> <code>{successful}</code>
+<b>Blocked Users:</b> <code>{blocked}</code>
+<b>Deleted Accounts:</b> <code>{deleted}</code>
+<b>Unsuccessful:</b> <code>{unsuccessful}</code>"""
 
         return await pls_wait.edit(status)
 
