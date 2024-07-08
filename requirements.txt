@@ -17,3 +17,5 @@ aiohttp
 
 # --- For-env-variables ------- #
 python-dotenv
+
+requests
