@@ -1,10 +1,17 @@
+# Jishu Developer
+# Don't Remove Credit 🥺
+# Telegram Channel @Madflix_Bots
+# Backup Channel @JishuBotz
+# Developer @JishuDeveloper
+
+
 from aiohttp import web
 from plugins import web_server
+import pyromod.listen
 from pyrogram import Client
 from pyrogram.enums import ParseMode
 import sys
-import asyncio
-from datetime import datetime, timedelta
+from datetime import datetime
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL1, FORCE_SUB_CHANNEL2, CHANNEL_ID, PORT
 
 
@@ -27,6 +34,39 @@ class Bot(Client):
         usr_bot_me = await self.get_me()
         self.uptime = datetime.now()
 
+        if FORCE_SUB_CHANNEL1:
+            try:
+                link = (await self.get_chat(FORCE_SUB_CHANNEL1)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL1)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL1)).invite_link
+                self.invitelink = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning(
+                    "Bot can't Export Invite link from Force Sub Channel!")
+                self.LOGGER(__name__).warning(
+                    f"Please Double check the FORCE_SUB_CHANNEL_1 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL1}")
+                self.LOGGER(__name__).info(
+                    "\nBot Stopped. Join https://t.me/DarkHumorHub_Bot for support")
+                sys.exit()
+        if FORCE_SUB_CHANNEL2:
+            try:
+                link = (await self.get_chat(FORCE_SUB_CHANNEL2)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL2)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL2)).invite_link
+                self.invitelink2 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning(
+                    "Bot can't Export Invite link from Force Sub Channel!")
+                self.LOGGER(__name__).warning(
+                    f"Please Double check the FORCE_SUB_CHANNEL_2 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL2}")
+                self.LOGGER(__name__).info(
+                    "\nBot Stopped. Join https://t.me/DarkHumorHub_Bot for support")
+                sys.exit()
+
         try:
             db_channel = await self.get_chat(CHANNEL_ID)
             self.db_channel = db_channel
@@ -37,61 +77,20 @@ class Bot(Client):
             self.LOGGER(__name__).warning(
                 f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
             self.LOGGER(__name__).info(
-                "\nBot Stopped. Ask at @DarkHumorHub_bot for support for support")
+                "\nBot Stopped. Join https://t.me/DarkHumorHub_bot for support")
             sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
         self.LOGGER(__name__).info(
             f"Bot Running..!\n\nCreated by \n@LeadModerator")
-        self.LOGGER(__name__).info(f"""▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂""")
+        self.LOGGER(__name__).info(f"""_▂▃▄▅▆▇█▓▒░ASV░▒▓█▇▆▅▄▃▂_""")
         self.username = usr_bot_me.username
-
-        # Start the web server
+        # web-response
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"
         await web.TCPSite(app, bind_address, PORT).start()
 
-        # Schedule the periodic check for force sub channels
-        self.schedule_periodic_check()
-
     async def stop(self, *args):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped.")
-
-    def schedule_periodic_check(self):
-        interval = timedelta(seconds=10)  # Adjust the interval as needed
-        self.loop.create_task(self.periodic_check(interval))
-
-    async def periodic_check(self, interval):
-        while True:
-            await self.check_force_sub_channel(FORCE_SUB_CHANNEL1, "invitelink")
-            await self.check_force_sub_channel(FORCE_SUB_CHANNEL2, "invitelink2")
-            await asyncio.sleep(interval.total_seconds())
-
-    async def check_force_sub_channel(self, channel_id, attribute):
-        if channel_id:
-            try:
-                chat = await self.get_chat(channel_id)
-                invite_link = await self.export_chat_invite_link(channel_id)
-                setattr(self, attribute, invite_link)
-            except Exception as e:
-                self.LOGGER(__name__).warning(e)
-                self.LOGGER(__name__).warning(
-                    "Bot can't Export Invite link from Force Sub Channel!")
-                self.LOGGER(__name__).warning(
-                    f"Please Double check the FORCE_SUB_CHANNEL value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {channel_id}")
-                self.LOGGER(__name__).info(
-                    "\nBot Stopped. Join https://t.me/DarkHumorHub_bot for support")
-                sys.exit()
-
-# Example usage in your main script:
-
-
-async def main():
-    bot = Bot()
-    await bot.start()
-    await bot.idle()
-
-if __name__ == '__main__':
-    asyncio.run(main())

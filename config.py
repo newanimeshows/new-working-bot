@@ -1,10 +1,3 @@
-# Jishu Developer
-# Don't Remove Credit 🥺
-# Telegram Channel @Madflix_Bots
-# Backup Channel @JishuBotz
-# Developer @JishuDeveloper
-
-
 import os
 import logging
 from logging.handlers import RotatingFileHandler
@@ -18,22 +11,21 @@ from pymongo.server_api import ServerApi
 load_dotenv()
 
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
-APP_ID = int(os.environ.get("APP_ID", "29854472"))
-API_HASH = os.environ.get("API_HASH", "510fdff9278e9ca889c6cab3f6b83e43")
+APP_ID = int(os.environ.get("APP_ID", ""))
+API_HASH = os.environ.get("API_HASH", "")
 
 
 OWNER = os.environ.get("OWNER", "@LeadModerator")  # Owner username
 OWNER_ID = int(os.environ.get("OWNER_ID", "7034554886"))  # Owner user id
-DB_URL = os.environ.get(
-    "DB_URL", "mongodb+srv://anmolap12:anmolap12@dev.tyztpju.mongodb.net/?retryWrites=true&w=majority&ssl=true&appName=Dev")
+DB_URL = os.environ.get("DB_URL", "")
 DB_NAME = os.environ.get("DB_NAME", "Dev")
 
 
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 FORCE_SUB_CHANNEL1 = int(os.environ.get(
-    "FORCE_SUB_CHANNEL1", "-1001818664655"))
+    "FORCE_SUB_CHANNEL1", ""))
 FORCE_SUB_CHANNEL2 = int(os.environ.get(
-    "FORCE_SUB_CHANNEL2", "-1002225612046"))
+    "FORCE_SUB_CHANNEL2", ""))
 
 
 SECONDS = int(os.getenv("SECONDS", "600"))  # auto delete in seconds
@@ -109,10 +101,3 @@ try:
     print("Pinged your deployment. You successfully connected to MongoDB!")
 except Exception as e:
     print(e)
-
-
-# Jishu Developer
-# Don't Remove Credit 🥺
-# Telegram Channel @Madflix_Bots
-# Backup Channel @JishuBotz
-# Developer @JishuDeveloper
