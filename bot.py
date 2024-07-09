@@ -69,18 +69,18 @@ class Bot(Client):
             await self.check_force_sub_channel(FORCE_SUB_CHANNEL2, "invitelink2")
             await asyncio.sleep(interval.total_seconds())
 
-    async def check_force_sub_channel(self, CHANNEL_ID, attribute):
-        if CHANNEL_ID:
+    async def check_force_sub_channel(self, channel_id, attribute):
+        if channel_id:
             try:
-                chat = await self.get_chat(CHANNEL_ID)
-                invite_link = await self.export_chat_invite_link(CHANNEL_ID)
+                chat = await self.get_chat(channel_id)
+                invite_link = await self.export_chat_invite_link(channel_id)
                 setattr(self, attribute, invite_link)
             except Exception as e:
                 self.LOGGER(__name__).warning(e)
                 self.LOGGER(__name__).warning(
                     "Bot can't Export Invite link from Force Sub Channel!")
                 self.LOGGER(__name__).warning(
-                    f"Please Double check the FORCE_SUB_CHANNEL value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {CHANNEL_ID}")
+                    f"Please Double check the FORCE_SUB_CHANNEL value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {channel_id}")
                 self.LOGGER(__name__).info(
                     "\nBot Stopped. Join https://t.me/DarkHumorHub_bot for support")
                 sys.exit()
