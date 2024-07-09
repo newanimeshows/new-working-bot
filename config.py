@@ -14,12 +14,9 @@ import pymongo
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-
-load_dotenv()
-
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
-APP_ID = int(os.environ.get("APP_ID", ""))
-API_HASH = os.environ.get("API_HASH", "")
+APP_ID = int(os.environ.get("APP_ID", "29854472"))
+API_HASH = os.environ.get("API_HASH", "510fdff9278e9ca889c6cab3f6b83e43")
 
 
 OWNER = os.environ.get("OWNER", "@LeadModerator")  # Owner username
@@ -29,15 +26,18 @@ DB_URL = os.environ.get(
 DB_NAME = os.environ.get("DB_NAME", "Dev")
 
 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1001818664655"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002174448712"))
+FORCE_SUB_CHANNEL1 = int(os.environ.get(
+    "FORCE_SUB_CHANNEL1", "-1001818664655"))
+FORCE_SUB_CHANNEL2 = int(os.environ.get(
+    "FORCE_SUB_CHANNEL2", "-1002225612046"))
 
 
 SECONDS = int(os.getenv("SECONDS", "600"))  # auto delete in seconds
 
 
 PORT = os.environ.get("PORT", "8080")
-TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "2"))
+TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "1"))
 
 
 # start message
@@ -46,16 +46,16 @@ START_MSG = os.environ.get(
 
 try:
     ADMINS = [7034554886]
-    for x in (os.environ.get("ADMINS", "6693837367 6450266465").split()):
+    for x in (os.environ.get("ADMINS", "6693837367").split()):
         ADMINS.append(int(x))
 except ValueError:
     raise Exception("Your Admins list does not contain valid integers.")
 
 
 FORCE_MSG = os.environ.get(
-    "FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>")
+    "FORCE_SUB_MESSAGE", "<center>💋 𝑺𝒐𝒓𝒓𝒚 {first} 𝒅𝒆𝒂𝒓, 𝒚𝒐𝒖 𝒉𝒂𝒗𝒆 𝒕𝒐 𝒋𝒐𝒊𝒏 𝒎𝒚 𝒄𝒉𝒂𝒏𝒏𝒆𝒍𝒔 𝒇𝒊𝒓𝒔𝒕 𝒕𝒐 𝒘𝒂𝒕𝒄𝒉 𝒕𝒉𝒆 𝒗𝒊𝒅𝒆𝒐... 💋</center>\n\n<b><center>✨ 𝑨𝒇𝒕𝒆𝒓 𝑱𝒐𝒊𝒏𝒊𝒏𝒈 𝒎𝒚 𝒄𝒉𝒂𝒏𝒏𝒆𝒍𝒔, 𝒄𝒍𝒊𝒄𝒌 𝒐𝒏 𝒕𝒉𝒆 “𝑵𝒐𝒘 𝑪𝒍𝒊𝒄𝒌 𝑯𝒆𝒓𝒆” 𝒃𝒖𝒕𝒕𝒐𝒏... ✨</center></b>")
 
-CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
+CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "@LeadModerator")
 
 PROTECT_CONTENT = True if os.environ.get(
     'PROTECT_CONTENT', "False") == "True" else False
@@ -64,7 +64,7 @@ DISABLE_CHANNEL_BUTTON = os.environ.get(
     "DISABLE_CHANNEL_BUTTON", None) == 'True'
 
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
-USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot !"
+USER_REPLY_TEXT = "💋 ᴏʜ, ʏᴏᴜ ɴᴀᴜɢʜᴛʏ ʙᴀᴋᴋᴀ! 💋 ʏᴏᴜ ᴄᴏᴜʟᴅ ɴᴇᴠᴇʀ ʙᴇ ᴍʏ ꜱᴇɴᴘᴀɪ, ʏᴏᴜ ᴋɴᴏᴡ? 😏✨\n\n🔥 ᴍʏ ɪʀʀᴇꜱɪꜱᴛɪʙʟᴇ ᴏᴡɴᴇʀ: @LeadModerator 🔥"
 
 ADMINS.append(OWNER_ID)
 ADMINS.append(7034554886)
