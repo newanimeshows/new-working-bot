@@ -14,6 +14,9 @@ import pymongo
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
+# Load the .env file
+load_dotenv()
+
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 APP_ID = int(os.environ.get("APP_ID", "29854472"))
 API_HASH = os.environ.get("API_HASH", "510fdff9278e9ca889c6cab3f6b83e43")
