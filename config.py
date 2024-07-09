@@ -6,6 +6,12 @@ from pymongo import MongoClient
 import pymongo
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+import requests
+
+response = requests.get('https://api.ipify.org?format=json')
+ip = response.json()['ip']
+print(f'Public IP Address: {ip}')
+
 
 # Load the .env file
 load_dotenv()
