@@ -17,8 +17,8 @@ print(f'Public IP Address: {ip}')
 load_dotenv()
 
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
-APP_ID = int(os.environ.get("APP_ID", ""))
-API_HASH = os.environ.get("API_HASH", "")
+APP_ID = int(os.environ.get("APP_ID", "29854472"))
+API_HASH = os.environ.get("API_HASH", "510fdff9278e9ca889c6cab3f6b83e43")
 
 
 OWNER = os.environ.get("OWNER", "@LeadModerator")  # Owner username
@@ -28,8 +28,10 @@ DB_NAME = os.environ.get("DB_NAME", "")
 
 
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002174448712"))
-FORCE_SUB_CHANNEL1 = int(os.environ.get("FORCE_SUB_CHANNEL1", ""))
-FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", ""))
+FORCE_SUB_CHANNEL1 = int(os.environ.get(
+    "FORCE_SUB_CHANNEL1", "-1001818664655"))
+FORCE_SUB_CHANNEL2 = int(os.environ.get(
+    "FORCE_SUB_CHANNEL2", "-1002225612046"))
 
 
 SECONDS = int(os.getenv("SECONDS", "600"))  # auto delete in seconds
