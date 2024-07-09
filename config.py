@@ -24,14 +24,12 @@ API_HASH = os.environ.get("API_HASH", "")
 OWNER = os.environ.get("OWNER", "@LeadModerator")  # Owner username
 OWNER_ID = int(os.environ.get("OWNER_ID", "7034554886"))  # Owner user id
 DB_URL = os.environ.get("DB_URL", "")
-DB_NAME = os.environ.get("DB_NAME", "Dev")
+DB_NAME = os.environ.get("DB_NAME", "")
 
 
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
-FORCE_SUB_CHANNEL1 = int(os.environ.get(
-    "FORCE_SUB_CHANNEL1", ""))
-FORCE_SUB_CHANNEL2 = int(os.environ.get(
-    "FORCE_SUB_CHANNEL2", ""))
+FORCE_SUB_CHANNEL1 = int(os.environ.get("FORCE_SUB_CHANNEL1", ""))
+FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", ""))
 
 
 SECONDS = int(os.getenv("SECONDS", "600"))  # auto delete in seconds
