@@ -77,7 +77,7 @@ class Bot(Client):
             self.LOGGER(__name__).warning(
                 f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
             self.LOGGER(__name__).info(
-                "\nBot Stopped. Join https://t.me/DarkHumorHub_bot for support")
+                "\nBot Stopped. Join https://t.me/DarkHumorHub_Bot for support")
             sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
