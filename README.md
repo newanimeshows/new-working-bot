@@ -39,7 +39,7 @@
 <p>
 If you need assistance or have any questions, you can contact the admin of this bot:
 
-[Contact Admin](https://t.me/DarkHumorHub_bot) - Click here to message the admin directly on Telegram.
+[![Contact Admin on Telegram](https://img.shields.io/badge/Contact%20Admin-on%20Telegram-blue?style=for-the-badge&logo=telegram)](https://t.me/DarkHumorHub_bot)
 
 </p>
 
