@@ -33,6 +33,16 @@
 * `USER_REPLY_TEXT` put your text to show when user sends any message, use HTML
 
 
+### Getting Help
+
+<summary>Support</summary>
+<p>
+If you need assistance or have any questions, you can contact the admin of this bot:
+
+[Contact Admin](https://t.me/DarkHumorHub_bot) - Click here to message the admin directly on Telegram.
+
+</p>
+
 
 ### DEPLOYEMENT SUPPORT
 
