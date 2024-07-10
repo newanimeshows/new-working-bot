@@ -5,7 +5,7 @@ from pyrogram import Client
 from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
-from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL1, FORCE_SUB_CHANNEL2, CHANNEL_IDS, PORT
+from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL1, FORCE_SUB_CHANNEL2, CHANNEL_ID, PORT
 import pyrogram.utils
 
 pyrogram.utils.MIN_CHANNEL_ID = -1009147483647
@@ -63,20 +63,17 @@ class Bot(Client):
                     "\nBot Stopped. Join https://t.me/DarkHumorHub_Bot for support")
                 sys.exit()
 
-        for channel_id in CHANNEL_IDS:
             try:
-                db_channel = await self.get_chat(channel_id)
+                db_channel = await self.get_chat(CHANNEL_ID)
                 self.db_channel = db_channel
                 test = await self.send_message(chat_id=db_channel.id, text="Test Message")
                 await test.delete()
-                self.LOGGER(__name__).info(
-                    f"Successfully tested channel ID: {channel_id}")
             except Exception as e:
                 self.LOGGER(__name__).warning(e)
                 self.LOGGER(__name__).warning(
-                    f"Make sure the bot is an admin in DB channel, and double-check the CHANNEL_ID value. Current value: {channel_id}")
+                    f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
                 self.LOGGER(__name__).info(
-                    "\nBot Stopped. Join https://t.me/DarkHumorHub_Bot for support")
+                    "\nBot Stopped. Join https://t.me/MadflixBots_Support for support")
                 sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
