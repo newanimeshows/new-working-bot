@@ -7,11 +7,17 @@ from helper_func import encode, get_message_id
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('batch'))
 async def batch(client: Client, message: Message):
+    first_message = None
+    second_message = None
+
+    # Ask for the first message
     while True:
         try:
             first_message = await client.ask(text="Forward the First Message from DB Channel (With Quotes)..\n\nOr Send the DB Channel Post Link", chat_id=message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
-        except:
+        except Exception as e:
+            print(f"Error asking for first message: {e}")
             return
+
         f_msg_id = await get_message_id(client, first_message)
         if f_msg_id:
             break
@@ -19,11 +25,14 @@ async def batch(client: Client, message: Message):
             await first_message.reply("❌ Error\n\nThis Forwarded Post is not from my DB Channel or this Link is taken from DB Channel", quote=True)
             continue
 
+    # Ask for the second message
     while True:
         try:
             second_message = await client.ask(text="Forward the Last Message from DB Channel (with Quotes)..\nor Send the DB Channel Post link", chat_id=message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
-        except:
+        except Exception as e:
+            print(f"Error asking for second message: {e}")
             return
+
         s_msg_id = await get_message_id(client, second_message)
         if s_msg_id:
             break
@@ -31,11 +40,24 @@ async def batch(client: Client, message: Message):
             await second_message.reply("❌ Error\n\nThis Forwarded Post is not from my DB Channel or this Link is taken from DB Channel", quote=True)
             continue
 
+    # Get message IDs
+    f_msg_id = await get_message_id(client, first_message)
+    s_msg_id = await get_message_id(client, second_message)
+
+    # Logic to handle messages between f_msg_id and s_msg_id
+    # Example: Generate a link for all messages between f_msg_id and s_msg_id
+    # Adjust this part based on your specific requirements
+
+    # Generate your batch link based on f_msg_id and s_msg_id
     string = f"get-{f_msg_id * abs(client.db_channel.id)}-{s_msg_id * abs(client.db_channel.id)}"
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
+
+    # Generate reply markup with a share URL button
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(
         "🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
+
+    # Reply with the batch link and share URL button
     await second_message.reply_text(f"<b>Here is your link</b>\n\n{link}", quote=True, reply_markup=reply_markup)
 
 
