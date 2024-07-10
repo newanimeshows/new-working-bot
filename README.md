@@ -1,7 +1,7 @@
-<img src="https://graph.org/file/cd2b471f3474d69740df5.jpg" alt="logo" target="/blank">
+<img src="https://backiee.com/static/wallpapers/1000x563/221292.jpg" alt="logo" target="/blank">
 
 <h1 align="center">
- <b><a href="https://t.me/Madflix_Bots" target="/blank"> File Sharing Premium Bot </a></>
+ <b><a href="https://t.me/DarkHumorHub_bot" target="/blank"> File Sharing Premium Bot </a></>
 </h1>
 
 <p align="center">🩵 Thanks for Being Here 🩵</p>
