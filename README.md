@@ -1,13 +1,42 @@
 <img src="https://backiee.com/static/wallpapers/1000x563/221292.jpg" alt="logo" target="/blank">
 
 <h1 align="center">
- <b><a href="https://t.me/DarkHumorHub_bot" target="/blank"> File Sharing Premium Bot </a></>
+ <b><a href="https://t.me/DarkHumorHub_bot" target="/blank"> File Sharing Premium Bot </a></b>
 </h1>
 
 <p align="center">🩵 Thanks for Being Here 🩵</p>
 
+### SETUP
 
-### CONFIGS VARIABLES
+1. **Download Repository:** First, download the repository to your local machine.
+
+2. **Open in VS Code:** Open the downloaded repository in Visual Studio Code (VS Code).
+
+3. **Install Requirements:** Open the terminal in VS Code and run the following command to install required packages:
+
+4. **Update .env File:** Update your .env file with the following variables:
+                        TG_BOT_TOKEN=<Your Telegram Bot Token>
+                        APP_ID=<Your Telegram API ID>
+                        API_HASH=<Your Telegram API Hash>
+                        OWNER_ID=<Your Telegram User ID>
+                        DB_URL=<Your MongoDB URL>
+                        DB_NAME=<Your MongoDB Database Name>
+                        CHANNEL_ID=<Your Channel ID>
+                        FORCE_SUB_CHANNEL1=<Optional: Your ForceSub Channel 1 ID>
+                        FORCE_SUB_CHANNEL2=<Optional: Your ForceSub Channel 2 ID>
+                        Make sure not to change the HTTP port; it should remain `8080`.
+
+5. **Run the Bot:** In the terminal, run the following command to start the bot:  python main.py
+
+6. **Access Localhost:** Open your web browser and type `localhost:3000` to access the running bot locally. If you see the bot interface, your setup is complete and ready for deployment.
+
+**Note:** These .env variables are only for local development. When deploying, you must configure these variables again on your deployment server.
+
+<div align="center">
+    <strong>Happy Coding!</strong>
+</div>
+
+### CONFIGS VARIABLES FOR DEPLOYMENT
 
 * `API_HASH` Your API Hash from my.telegram.org
 * `APP_ID` Your API ID from my.telegram.org
@@ -67,10 +96,7 @@ If you need assistance or have any questions, you can contact the admin of this 
 ### FEATURES
 - Fully customisable.
 - Auto Delete Added.
-- 3 Branch Available.
-- main Branch Means 1 force subs.
-- 2-force-subs Means 2 force subs.
-- 4-force-subs Means 4 force subs.
+- main Branch Means 2 force subs.
 - Customisable welcome & Forcesub messages.
 - More than one Posts in One Link.
 - Can be deployed on heroku directly.
@@ -107,10 +133,11 @@ If you need assistance or have any questions, you can contact the admin of this 
 ### ALL COMMANDS
 
 ```
-start - start the bot or get posts
-batch - create link for more than one posts
-genlink - create link for one post
-users - view bot statistics
-broadcast - broadcast any messages to bot users
-stats - checking your bot uptime
+start - Start the bot or get posts.
+batch - Create a link for more than one post.
+genlink - Create a link for one post.
+custom_batch - Create a link for a custom batch of posts by only sharing the files needed to be in a batch.
+users - View bot statistics.
+broadcast - Broadcast any message to bot users.
+stats - Check the bot uptime.
 ```
