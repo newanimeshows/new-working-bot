@@ -133,11 +133,10 @@ If you need assistance or have any questions, you can contact the admin of this 
 ### ALL COMMANDS
 
 ```
-start - Start the bot or get posts.
-batch - Create a link for more than one post.
-genlink - Create a link for one post.
-custom_batch - Create a link for a custom batch of posts by only sharing the files needed to be in a batch.
-users - View bot statistics.
-broadcast - Broadcast any message to bot users.
-stats - Check the bot uptime.
+start - start the bot or get posts
+batch - create link for more than one posts
+genlink - create link for one post
+users - view bot statistics
+broadcast - broadcast any messages to bot users
+stats - checking your bot uptime
 ```

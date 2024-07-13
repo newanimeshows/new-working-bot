@@ -10,7 +10,7 @@ from helper_func import subscribed, decode, get_messages
 from database.database import add_user, present_user, del_user, full_userbase
 
 # Add time in seconds for waiting before deleting
-SECONDS = int(os.getenv("SECONDS", "10"))
+SECONDS = int(os.getenv("SECONDS", "600"))
 
 # Start command handler
 
