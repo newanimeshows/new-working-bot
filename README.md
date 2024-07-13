@@ -104,7 +104,7 @@ If you need assistance or have any questions, you can contact the admin of this 
 - Customisable welcome & Forcesub messages.
 - More than one Posts in One Link.
 - Can be deployed on heroku directly.
-- Deploy to Koyeb + Heroku + Railway.
+- Deploy to Koyeb + Heroku + Railway + Render
 - Developer Service 24x7.
 
 
@@ -137,10 +137,12 @@ If you need assistance or have any questions, you can contact the admin of this 
 ### ALL COMMANDS
 
 ```
-start - start the bot or get posts
-batch - create link for more than one posts
-genlink - create link for one post
-users - view bot statistics
-broadcast - broadcast any messages to bot users
-stats - checking your bot uptime
+Bot Command Descriptions:
+start - Start the bot or get posts.
+batch - Create a link for more than one post.
+genlink - Create a link for one post.
+customBatch - Create a link for a custom batch of posts.
+users - View bot statistics.
+broadcast - Broadcast any message to bot users.
+stats - Check the bot uptime.
 ```
