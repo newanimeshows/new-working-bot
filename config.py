@@ -17,17 +17,17 @@ print(f'Public IP Address: {ip}')
 load_dotenv()
 
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
-APP_ID = int(os.environ.get("APP_ID", "29854472"))
-API_HASH = os.environ.get("API_HASH", "510fdff9278e9ca889c6cab3f6b83e43")
+APP_ID = int(os.environ.get("APP_ID", "25797857"))
+API_HASH = os.environ.get("API_HASH", "77717127ece56fac64ebea6250db8bb7")
 
 
-OWNER = os.environ.get("OWNER", "@LeadModerator")  # Owner username
-OWNER_ID = int(os.environ.get("OWNER_ID", "7034554886"))  # Owner user id
+OWNER = os.environ.get("OWNER", "@Tamil_Aime_Files")  # Owner username
+OWNER_ID = int(os.environ.get("OWNER_ID", "6693549185"))  # Owner user id
 DB_URL = os.environ.get("DB_URL", "")
 DB_NAME = os.environ.get("DB_NAME", "")
 
 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002174448712"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002168169351"))
 FORCE_SUB_CHANNEL1 = int(os.environ.get(
     "FORCE_SUB_CHANNEL1", "0"))
 FORCE_SUB_CHANNEL2 = int(os.environ.get(
@@ -38,7 +38,7 @@ SECONDS = int(os.getenv("SECONDS", "600"))  # auto delete in seconds
 
 
 PORT = os.environ.get("PORT", "8080")
-TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "2"))
+TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "1"))
 
 
 # start message
@@ -46,8 +46,8 @@ START_MSG = os.environ.get(
     "START_MESSAGE", "<b>ʜᴇʟʟᴏ {mention}\n\n ɪ ᴀᴍ ᴍᴜʟᴛɪ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ , ɪ ᴄᴀɴ sᴛᴏʀᴇ ᴘʀɪᴠᴀᴛᴇ ғɪʟᴇs ɪɴ sᴘᴇᴄɪғɪᴇᴅ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴏᴛʜᴇʀ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss ɪᴛ ғʀᴏᴍ sᴘᴇᴄɪᴀʟ ʟɪɴᴋ » @AnimeStreamVault</b>")
 
 try:
-    ADMINS = [7034554886]
-    for x in (os.environ.get("ADMINS", "7034554886 6693837367").split()):
+    ADMINS = [6693549185]
+    for x in (os.environ.get("ADMINS", "6693549185").split()):
         ADMINS.append(int(x))
 except ValueError:
     raise Exception("Your Admins list does not contain valid integers.")
@@ -68,7 +68,7 @@ BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = "💋 ᴏʜ, ʏᴏᴜ ɴᴀᴜɢʜᴛʏ ʙᴀᴋᴋᴀ! 💋 ʏᴏᴜ ᴄᴏᴜʟᴅ ɴᴇᴠᴇʀ ʙᴇ ᴍʏ ꜱᴇɴᴘᴀɪ, ʏᴏᴜ ᴋɴᴏᴡ? 😏✨\n\n🔥 ᴍʏ ɪʀʀᴇꜱɪꜱᴛɪʙʟᴇ ᴏᴡɴᴇʀ: @LeadModerator 🔥"
 
 ADMINS.append(OWNER_ID)
-ADMINS.append(7034554886)
+ADMINS.append(6693549185)
 
 LOG_FILE_NAME = "filesharingbot.txt"
 
