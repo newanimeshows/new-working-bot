@@ -15,16 +15,17 @@
 3. **Install Requirements:** Open the terminal in VS Code and run the following command to install required packages:
 
 4. **Update .env File:** Update your .env file with the following variables:
-                        TG_BOT_TOKEN=<Your Telegram Bot Token>
-                        APP_ID=<Your Telegram API ID>
-                        API_HASH=<Your Telegram API Hash>
-                        OWNER_ID=<Your Telegram User ID>
-                        DB_URL=<Your MongoDB URL>
-                        DB_NAME=<Your MongoDB Database Name>
-                        CHANNEL_ID=<Your Channel ID>
-                        FORCE_SUB_CHANNEL1=<Optional: Your ForceSub Channel 1 ID>
-                        FORCE_SUB_CHANNEL2=<Optional: Your ForceSub Channel 2 ID>
-                        Make sure not to change the HTTP port; it should remain `8080`.
+
+TG_BOT_TOKEN=<Your Telegram Bot Token>
+APP_ID=<Your Telegram API ID>
+API_HASH=<Your Telegram API Hash>
+OWNER_ID=<Your Telegram User ID>
+DB_URL=<Your MongoDB URL>
+DB_NAME=<Your MongoDB Database Name>
+CHANNEL_ID=<Your Channel ID>
+FORCE_SUB_CHANNEL1=<Optional: Your ForceSub Channel 1 ID>
+FORCE_SUB_CHANNEL2=<Optional: Your ForceSub Channel 2 ID>
+Make sure not to change the HTTP port; it should remain `8080`.
 
 5. **Run the Bot:** In the terminal, run the following command to start the bot:  python main.py
 
