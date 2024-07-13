@@ -111,7 +111,7 @@ Bot Command Descriptions:
 start - Start the bot or get posts.
 batch - Create a link for more than one post.
 genlink - Create a link for one post.
-customBatch - Create a link for a custom batch of posts.
+custom_batch - Create a link for a custom batch of posts.
 users - View bot statistics.
 broadcast - Broadcast any message to bot users.
 stats - Check the bot uptime.
