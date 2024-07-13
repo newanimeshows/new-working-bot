@@ -16,7 +16,7 @@
 
 4. **Update .env File:** Update your .env file with the following variables:
 
-TG_BOT_TOKEN=<Your Telegram Bot Token>
+      * TG_BOT_TOKEN=<Your Telegram Bot Token>
 APP_ID=<Your Telegram API ID>
 API_HASH=<Your Telegram API Hash>
 OWNER_ID=<Your Telegram User ID>
