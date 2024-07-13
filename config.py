@@ -43,7 +43,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "1"))
 
 # start message
 START_MSG = os.environ.get(
-    "START_MESSAGE", "<b>ʜᴇʟʟᴏ {mention}\n\n ɪ ᴀᴍ ᴍᴜʟᴛɪ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ , ɪ ᴄᴀɴ sᴛᴏʀᴇ ᴘʀɪᴠᴀᴛᴇ ғɪʟᴇs ɪɴ sᴘᴇᴄɪғɪᴇᴅ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴏᴛʜᴇʀ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss ɪᴛ ғʀᴏᴍ sᴘᴇᴄɪᴀʟ ʟɪɴᴋ » @AnimeStreamVault</b>")
+    "START_MESSAGE", "🔥 ɪᴛᴀᴅᴀᴋɪᴍᴀꜱᴜ! 🔥 {first}\n\n ᴅɪꜱᴄᴏᴠᴇʀ ᴀɴɪᴍᴇ ᴛʀᴇᴀꜱᴜʀᴇꜱ ᴡɪᴛʜ ᴏᴜʀ ʙᴏᴛ. ᴅᴏɴ’ᴛ ᴍɪꜱꜱ ᴏᴜᴛ—ᴊᴏɪɴ @ᴛᴀᴍɪʟ_ᴀɴɪᴍᴇ_ꜰɪʟᴇꜱ ɴᴏᴡ! 🚀")
 
 try:
     ADMINS = [6693549185]
