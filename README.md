@@ -28,11 +28,11 @@
       - **`FORCE_SUB_CHANNEL1`**=&lt;Optional: Your ForceSub Channel 1 ID&gt;
       - **`FORCE_SUB_CHANNEL2`**=&lt;Optional: Your ForceSub Channel 2 ID&gt;
 
-   Make sure not to change the HTTP port; it should remain `8080`.
+   Make sure not to change the HTTP port; it should remain `8080`, because it only runs on **`localhost:8080`**
 
 5. **Run the Bot:** In the terminal, run the following command to start the bot:  python main.py
 
-6. **Access Localhost:** Open your web browser and type `localhost:3000` to access the running bot locally. If you see the bot interface, your setup is complete and ready for deployment.
+6. **Access Localhost:** Open your web browser and type `localhost:8080` to access the running bot locally. If you see the bot interface, your setup is complete and ready for deployment.
 
 **Note:** These .env variables are only for local development. When deploying, you must configure these variables again on your deployment server.
 
