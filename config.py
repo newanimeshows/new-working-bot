@@ -65,7 +65,7 @@ DISABLE_CHANNEL_BUTTON = os.environ.get(
     "DISABLE_CHANNEL_BUTTON", None) == 'True'
 
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
-USER_REPLY_TEXT = "💋 ᴏʜ, ʏᴏᴜ ɴᴀᴜɢʜᴛʏ ʙᴀᴋᴋᴀ! 💋 ʏᴏᴜ ᴄᴏᴜʟᴅ ɴᴇᴠᴇʀ ʙᴇ ᴍʏ ꜱᴇɴᴘᴀɪ, ʏᴏᴜ ᴋɴᴏᴡ? 😏✨\n\n🔥 ᴍʏ ɪʀʀᴇꜱɪꜱᴛɪʙʟᴇ ᴏᴡɴᴇʀ: @LeadModerator 🔥"
+USER_REPLY_TEXT = "❌ʏᴏᴜ-ʙᴀᴋᴀᴀ! ᴅᴏɴ'ᴛ ꜱᴇɴᴅ ᴍᴇ ᴍᴇꜱꜱᴀɢᴇ"
 
 ADMINS.append(OWNER_ID)
 ADMINS.append(6693549185)
