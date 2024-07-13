@@ -9,12 +9,12 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text=f"<b>🤖 My Name :</b> <a href='https://t.me/FileSharingXProBot'>File Sharing Bot</a> \n<b>📝 Language :</b> <a href='https://python.org'>Python 3</a> \n<b>📚 Library :</b> <a href='https://pyrogram.org'>Pyrogram {__version__}</a> \n<b>🚀 Server :</b> <a href='https://app.koyeb.com/'>Koyeb</a> \n<b>📢 Channel :</b> <a href='https://t.me/DarkHumorHub'>Dark Humor Hub</a> \n<b>🧑‍💻 Developer :</b> <a href='tg://user?id={OWNER_ID}'>Admin</a>",
+            text=f"<b>○ Creator : <a href='tg://user?id={OWNER_ID}'>Moon Walker</a>\n○ Language : <code>Python 3</code>\n○ Channel: <a href='https://t.me/Tamil_Anime_Files'>Tamil Anime</a>\n○ Source :<a href='https://t.me/Tamil_Anime_Files'>Click here</a></b>",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🔒 Close", callback_data="close")
+                        InlineKeyboardButton("", callback_data="close")
                     ]
                 ]
             )
