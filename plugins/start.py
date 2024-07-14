@@ -65,7 +65,7 @@ async def start_command(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "⚡️ ᴀʙᴏᴜᴛ", callback_data="about"),
+                        "ᴀʙᴏᴜᴛ", callback_data="about"),
                     InlineKeyboardButton(
                         "ᴄʟᴏꜱᴇ", callback_data="close")
                 ]
@@ -210,8 +210,8 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •",
+            InlineKeyboardButton(text="⚡️ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ⚡️", url=client.invitelink),
+            InlineKeyboardButton(text="⚡️ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ⚡️",
                                  url=client.invitelink2),
         ]
     ]
@@ -220,7 +220,7 @@ async def not_joined(client: Client, message: Message):
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text='• ɴᴏᴡ ᴄʟɪᴄᴋ ʜᴇʀᴇ •',
+                    text='𝐓𝐫𝐲 𝐀𝐠𝐚𝐢𝐧',
                     url=f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
