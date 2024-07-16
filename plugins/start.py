@@ -166,7 +166,7 @@ async def start_command(client: Client, message: Message):
         # Notify the user about the deletion process and wait before deletion
         deletion_msg = await client.send_message(
             chat_id=message.from_user.id,
-            text="<b>𝐀𝐭𝐭𝐞𝐧𝐭𝐢𝐨𝐧! 🚨</b>\n\n  𝐃𝐮𝐞 𝐓𝐨 𝐚 <a href='https://t.me/GodcatFury'>𝐌𝐚𝐝 𝐂𝐚𝐭</a> 𝐓𝐡𝐢𝐬 𝐅𝐢𝐥𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐝𝐞𝐥𝐞𝐭𝐞𝐝 𝐢𝐧 10 𝐦𝐢𝐧𝐮𝐭𝐞𝐬! 😱\n 🔥 𝐐𝐮𝐢𝐜𝐤𝐥𝐲, 𝐬𝐡𝐚𝐫𝐞 𝐭𝐡𝐢𝐬 𝐟𝐢𝐥𝐞 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐬𝐞𝐜𝐫𝐞𝐭 𝐬𝐭𝐚𝐬𝐡 𝐨𝐫 𝐬𝐨𝐦𝐞𝐰𝐡𝐞𝐫𝐞 𝐬𝐚𝐟𝐞 𝐭𝐨 𝐩𝐫𝐞𝐯𝐞𝐧𝐭 𝐢𝐭𝐬 𝐝𝐞𝐦𝐢𝐬𝐞! 📂\n  👀 𝐇𝐞’𝐬 𝐜𝐨𝐦𝐢𝐧𝐠 𝐭𝐨 𝐝𝐞𝐥𝐞𝐭𝐞 𝐲𝐨𝐮𝐫 𝐟𝐢𝐥𝐞! 𝐀𝐜𝐭 𝐧𝐨𝐰! 🏃‍♂️💨",
+            text="<b>𝐀𝐭𝐭𝐞𝐧𝐭𝐢𝐨𝐧! 🚨</b>\n\n  𝐃𝐮𝐞 𝐓𝐨 𝐚 <a href='tg://user?id={7065803173}'>𝐌𝐚𝐝 𝐂𝐚𝐭</a> 𝐓𝐡𝐢𝐬 𝐅𝐢𝐥𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐝𝐞𝐥𝐞𝐭𝐞𝐝 𝐢𝐧 10 𝐦𝐢𝐧𝐮𝐭𝐞𝐬! 😱\n 🔥 𝐐𝐮𝐢𝐜𝐤𝐥𝐲, 𝐬𝐡𝐚𝐫𝐞 𝐭𝐡𝐢𝐬 𝐟𝐢𝐥𝐞 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐬𝐞𝐜𝐫𝐞𝐭 𝐬𝐭𝐚𝐬𝐡 𝐨𝐫 𝐬𝐨𝐦𝐞𝐰𝐡𝐞𝐫𝐞 𝐬𝐚𝐟𝐞 𝐭𝐨 𝐩𝐫𝐞𝐯𝐞𝐧𝐭 𝐢𝐭𝐬 𝐝𝐞𝐦𝐢𝐬𝐞! 📂\n  👀 𝐇𝐞’𝐬 𝐜𝐨𝐦𝐢𝐧𝐠 𝐭𝐨 𝐝𝐞𝐥𝐞𝐭𝐞 𝐲𝐨𝐮𝐫 𝐟𝐢𝐥𝐞! 𝐀𝐜𝐭 𝐧𝐨𝐰! 🏃‍♂️💨",
             parse_mode=ParseMode.HTML
         )
 
@@ -182,7 +182,7 @@ async def start_command(client: Client, message: Message):
                 pass
 
         # Inform user about completion of deletion process
-        await deletion_msg.edit_text("<b><i>Sorry Dude😞</i></b>\n\n𝐓𝐡𝐚𝐭 𝐋𝐢𝐭𝐭𝐥𝐞 <a href='https://t.me/GodcatFury'>𝐂𝐚𝐭</a> 𝐃𝐞𝐥𝐞𝐭𝐞𝐝 𝐘𝐨𝐮 𝐅𝐢𝐥𝐞🤬")
+        await deletion_msg.edit_text("<b><i>Sorry Dude😞</i></b>\n\n𝐓𝐡𝐚𝐭 𝐋𝐢𝐭𝐭𝐥𝐞 <a href='tg://user?id={7065803173}'>𝐂𝐚𝐭</a> 𝐃𝐞𝐥𝐞𝐭𝐞𝐝 𝐘𝐨𝐮 𝐅𝐢𝐥𝐞🤬")
 
     else:
         # No files found, inform the user
