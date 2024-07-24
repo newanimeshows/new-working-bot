@@ -1,5 +1,4 @@
-<img src="https://backiee.com/static/wallpapers/1000x563/221292.jpg" alt="logo" target="/blank">
-
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Bold&duration=5051&pause=1000&color=F70202&width=435&lines=This+is+a+File+Bot;Created+By+Python+and+Html+Language;This+is+Developed+By+AniShin+and+Admin)](https://git.io/typing-svg)
 <h1 align="center">
  <b><a href="https://t.me/DarkHumorHub_bot" target="/blank"> File Sharing Premium Bot </a></b>
 </h1>
