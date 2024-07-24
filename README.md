@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Bold&size=50&duration=5051&pause=1000&color=F70202&width=1090&height=300&lines=This+is+a+File+Store+Bot+Repo;Made+With+Python+And+Html;Created+By+AniShin+and+Admin)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Bold&size=50&duration=5051&pause=1000&color=F70202&width=1090&height=90&lines=This+is+a+File+Store+Bot+Repo;Made+With+Python+And+Html;Created+By+AniShin+and+Admin)](https://git.io/typing-svg)
 <h1 align="center">
  <b><a href="https://t.me/DarkHumorHub_bot" target="/blank"> File Sharing Premium Bot </a></b>
 </h1>
