@@ -17,17 +17,17 @@ print(f'Public IP Address: {ip}')
 load_dotenv()
 
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
-APP_ID = int(os.environ.get("APP_ID", "28277294"))
-API_HASH = os.environ.get("API_HASH", "7ec1420b010830ad701cf518ce0474580")
+APP_ID = int(os.environ.get("APP_ID", "19277331"))
+API_HASH = os.environ.get("API_HASH", "0df4b3b4eee9baa47694411eb4317115")
 
 
-OWNER = os.environ.get("OWNER", "@ULTIMATE_GUARDIAN_X")  # Owner username
-OWNER_ID = int(os.environ.get("OWNER_ID", "1768198143"))  # Owner user id
+OWNER = os.environ.get("OWNER", "@ayan_alam")  # Owner username
+OWNER_ID = int(os.environ.get("OWNER_ID", "1196934318"))  # Owner user id
 DB_URL = os.environ.get("DB_URL", "")
 DB_NAME = os.environ.get("DB_NAME", "")
 
 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002122561727"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002169291947"))
 FORCE_SUB_CHANNEL1 = int(os.environ.get(
     "FORCE_SUB_CHANNEL1", "0"))
 FORCE_SUB_CHANNEL2 = int(os.environ.get(
@@ -46,8 +46,8 @@ START_MSG = os.environ.get(
     "START_MESSAGE", "<b>🌸 ᴀʀɪɢᴀᴛᴏᴜ, {first}!\n\n 🌸 ᴇᴍʙʀᴀᴄᴇ ᴛʜᴇ ᴀɴɪᴍᴇ ᴍᴀɢɪᴄ! ʜᴇʀᴇ, ᴘɪxᴇʟꜱ ᴅᴀɴᴄᴇ, ꜱᴛᴏʀɪᴇꜱ ᴜɴꜰᴏʟᴅ, ᴀɴᴅ ᴇᴍᴏᴛɪᴏɴꜱ ɪɢɴɪᴛᴇ. ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴏᴜʀ ꜱᴀɴᴄᴛᴜᴀʀʏ—ᴀ ᴘʟᴀᴄᴇ ᴡʜᴇʀᴇ ᴀɴɪᴍᴇ ᴅʀᴇᴀᴍꜱ ᴛᴀᴋᴇ ꜰʟɪɢʜᴛ. ᴇɴᴊᴏʏ ᴛʜᴇ ᴊᴏᴜʀɴᴇʏ! 🌟</b>")
 
 try:
-    ADMINS = [1768198143]
-    for x in (os.environ.get("ADMINS", "1768198143 6450266465 7065803173").split()):
+    ADMINS = [1196934318]
+    for x in (os.environ.get("ADMINS", "1196934318").split()):
         ADMINS.append(int(x))
 except ValueError:
     raise Exception("Your Admins list does not contain valid integers.")
