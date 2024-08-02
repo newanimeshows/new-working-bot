@@ -186,7 +186,7 @@ async def start_command(client: Client, message: Message):
 
     else:
         # No files found, inform the user
-        sent_msg = await message.reply_text("ɴɪɢɢᴀ ʏᴏᴜ ʟᴀᴛᴇ. ɢᴇᴛ ʏᴏᴜʀ ᴀss ɪɴ ʜᴇʀᴇ ɪɴ ᴛɪᴍᴇ")
+        sent_msg = await message.reply_text("ʏᴏᴜ ARE ʟᴀᴛᴇ. ɢᴇᴛ IN ʜᴇʀᴇ ɪɴ ᴛɪᴍᴇ")
 
         # Auto delete the message after 7 seconds
         await asyncio.sleep(7)
