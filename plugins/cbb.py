@@ -9,7 +9,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text=f"<b>○ Creator : <a href='tg://user?id=1768198143'>🄰🄺🄳 ⚝ [ PRIME ]</a>\n○ Language : <code>Python 3</code>\n○ Anime Channel: <a href='https://t.me/Anime_keeda'>Anime Keeda</a>\n○ Movie Channel :<a href='https://t.me/MovieWalaX'>Movie-Wala-X</a>\n○ Source :<a href='https://t.me/Anime_keeda'>Click here</a></b>",
+            text=f"<b>○ Creator : <a href='tg://user?id=1196934318'>Ayan</a>\n○ Language : <code>Python 3</code>\n○ Anime Channel: <a href='https://t.me/newanimeshow'>New Anime Shows</a>\n○ Anime Group :<a href='https://t.me/newanimeshowsgroup'>New Anime Shows Group</a>\n○ Source :<a href='https://t.me/Anime_keeda'>Click here</a></b>",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
