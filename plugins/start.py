@@ -97,7 +97,7 @@ async def start_command(client: Client, message: Message):
         return
 
     if not messages:
-        sent_msg = await message.reply_text("ɴɪɢɢᴀ ʏᴏᴜ ʟᴀᴛᴇ. ɢᴇᴛ ʏᴏᴜʀ ᴀss ɪɴ ʜᴇʀᴇ ɪɴ ᴛɪᴍᴇ")
+        sent_msg = await message.reply_text("𝗬𝗢𝗨 𝗔𝗥𝗘 𝗟𝗔𝗧𝗘, 𝗚𝗘𝗧 𝗜𝗡 𝗛𝗘𝗥𝗘 𝗜𝗡 𝗧𝗜𝗠𝗘!!")
 
         # Auto delete the message after 7 seconds
         await asyncio.sleep(7)
@@ -166,7 +166,7 @@ async def start_command(client: Client, message: Message):
         # Notify the user about the deletion process and wait before deletion
         deletion_msg = await client.send_message(
             chat_id=message.from_user.id,
-            text="<b>𝐀𝐭𝐭𝐞𝐧𝐭𝐢𝐨𝐧! 🚨</b>\n\n  𝐃𝐮𝐞 𝐓𝐨 𝐚 <a href='tg://user?id=7065803173'>𝐌𝐚𝐝 𝐂𝐚𝐭</a> 𝐓𝐡𝐢𝐬 𝐅𝐢𝐥𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐝𝐞𝐥𝐞𝐭𝐞𝐝 𝐢𝐧 10 𝐦𝐢𝐧𝐮𝐭𝐞𝐬! 😱\n 🔥 𝐐𝐮𝐢𝐜𝐤𝐥𝐲, 𝐬𝐡𝐚𝐫𝐞 𝐭𝐡𝐢𝐬 𝐟𝐢𝐥𝐞 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐬𝐞𝐜𝐫𝐞𝐭 𝐬𝐭𝐚𝐬𝐡 𝐨𝐫 𝐬𝐨𝐦𝐞𝐰𝐡𝐞𝐫𝐞 𝐬𝐚𝐟𝐞 𝐭𝐨 𝐩𝐫𝐞𝐯𝐞𝐧𝐭 𝐢𝐭𝐬 𝐝𝐞𝐦𝐢𝐬𝐞! 📂\n  👀 𝐇𝐞’𝐬 𝐜𝐨𝐦𝐢𝐧𝐠 𝐭𝐨 𝐝𝐞𝐥𝐞𝐭𝐞 𝐲𝐨𝐮𝐫 𝐟𝐢𝐥𝐞! 𝐀𝐜𝐭 𝐧𝐨𝐰! 🏃‍♂️💨",
+            text="<b>𝐀𝐭𝐭𝐞𝐧𝐭𝐢𝐨𝐧! 🚨</b>\n\n  -> 𝐃𝐮𝐞 𝐓𝐨 𝘾𝙤𝙥𝙮𝙧𝙞𝙜𝙝𝙩 𝙄𝙨𝙨𝙪𝙚𝙨, 𝐅𝐢𝐥𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐝𝐞𝐥𝐞𝐭𝐞𝐝 𝐢𝐧 10 𝐦𝐢𝐧𝐮𝐭𝐞𝐬!\n -> 🔥 𝙎𝗮𝘃𝗲 𝗧𝗵𝗲𝘀𝗲 𝗙𝗶𝗹𝗲𝘀 𝗜𝗻 𝗬𝗼𝘂𝗿 𝗦𝗮𝘃𝗲𝗱 𝗠𝗲𝘀𝘀𝗮𝗴𝗲𝘀! 📂\n  -> 👀 𝗠𝘂𝘀𝘁 𝗝𝗼𝗶𝗻 <a href='https://web.telegram.org/a/#-1002205326796'>@𝙉𝙚𝙬_𝘼𝙣𝙞𝙢𝙚_𝙎𝙝𝙤𝙬𝙨 </a>𝗔𝗻𝗱 <a href='https://web.telegram.org/a/#-1002226054002'>@𝘼𝙣𝙞𝙢𝙚_𝙂𝙧𝙤𝙪𝙥 𝗧𝗼 𝗨𝘀𝗲 𝗠𝗲..! ✨</a>",
             parse_mode=ParseMode.HTML
         )
 
@@ -182,11 +182,11 @@ async def start_command(client: Client, message: Message):
                 pass
 
         # Inform user about completion of deletion process
-        await deletion_msg.edit_text("<b><i>Sorry Dude😞</i></b>\n\n𝐓𝐡𝐚𝐭 𝐋𝐢𝐭𝐭𝐥𝐞 <a href='tg://user?id=7065803173'>𝐂𝐚𝐭</a> 𝐃𝐞𝐥𝐞𝐭𝐞𝐝 𝐘𝐨𝐮 𝐅𝐢𝐥𝐞🤬")
+        await deletion_msg.edit_text("𝗧𝗛𝗘 𝗙𝗜𝗟𝗘𝗦 𝗛𝗔𝗦 𝗕𝗘𝗘𝗡 𝗗𝗘𝗟𝗘𝗧𝗘𝗗!!")
 
     else:
         # No files found, inform the user
-        sent_msg = await message.reply_text("ʏᴏᴜ ARE ʟᴀᴛᴇ. ɢᴇᴛ IN ʜᴇʀᴇ ɪɴ ᴛɪᴍᴇ")
+        sent_msg = await message.reply_text("𝗬𝗢𝗨 𝗔𝗥𝗘 𝗟𝗔𝗧𝗘, 𝗚𝗘𝗧 𝗜𝗡 𝗛𝗘𝗥𝗘 𝗜𝗡 𝗧𝗜𝗠𝗘!! \n\n 𝗜𝗙 𝗙𝗜𝗟𝗘 𝗜𝗦 𝗡𝗢𝗧 𝗦𝗛𝗢𝗪𝗜𝗡𝗚, 𝗪𝗔𝗜𝗧 𝗔𝗡𝗗 𝗧𝗥𝗬 𝗔𝗚𝗔𝗜𝗡 𝗢𝗥 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 <a href='https://web.telegram.org/a/#6965778216'>@𝗛𝗘𝗟𝗣𝗘𝗥</a>")
 
         # Auto delete the message after 7 seconds
         await asyncio.sleep(7)
