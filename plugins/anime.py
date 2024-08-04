@@ -249,7 +249,7 @@ message = (f"*Title:* {title}\n"
     else:
         await query.message.reply_text("Details not found.")
 
-async def top_anime(update: Update, context: CallbackContext) -> None:
+async def start(update: Update, context: CallbackContext) -> None:
     keyboard = [
         [InlineKeyboardButton("Weekly Top Anime", callback_data='weekly')],
         [InlineKeyboardButton("Trending Anime", callback_data='trending')],
@@ -263,4 +263,52 @@ async def top_anime(update: Update, context: CallbackContext) -> None:
         await update.callback_query.message.reply_text('Please choose one option:', reply_markup=reply_markup)
 
 async def button(update: Update, context: CallbackContext) -> None:
-    query = update
+    query = update.callback_query
+    await query.answer()
+
+    if query.data in ['weekly', 'trending', 'top']:
+        if query.data == 'weekly':
+            await weekly(update, context)
+        elif query.data == 'trending':
+            await trending(update, context)
+        elif query.data == 'top':
+            await top(update, context)
+    elif query.data == 'search':
+        await search(update, context)
+    elif query.data.startswith('detail_'):
+        await details(update, context)
+    elif query.data == 'start':
+        await start(update, context)
+
+def set_bot_commands(token):
+    url = f'https://api.telegram.org/bot{token}/setMyCommands'
+    commands = [
+        {'command': 'start', 'description': 'Start the bot'},
+        {'command': 'weekly', 'description': 'Show weekly top anime'},
+        {'command': 'trending', 'description': 'Show trending anime'},
+        {'command': 'top', 'description': 'Show top anime list'},
+        {'command': 'search', 'description': 'Search for an anime'}
+    ]
+    response = requests.post(url, json={'commands': commands})
+    print(response.json())  # For debugging
+
+def main() -> None:
+    # Set bot commands
+    set_bot_commands(TOKEN)
+    
+    # Initialize the application with the token
+    application = Application.builder().token(TOKEN).build()
+
+    # Add handlers
+    application.add_handler(CommandHandler('start', start))
+    application.add_handler(CommandHandler('weekly', weekly))
+    application.add_handler(CommandHandler('trending', trending))
+    application.add_handler(CommandHandler('top', top))
+    application.add_handler(CommandHandler('search', search))
+    application.add_handler(CallbackQueryHandler(button, pattern='^start|weekly|trending|top|search|detail_'))
+
+    # Start polling
+    application.run_polling()
+
+if __name__ == '__main__':
+    main() 
