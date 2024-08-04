@@ -17,5 +17,8 @@ aiohttp
 
 # --- For-env-variables ------- #
 python-dotenv
-
 requests
+
+#--new requirement--#
+python-telegram-bot==20.3
+beautifulsoup4
