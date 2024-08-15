@@ -13,8 +13,6 @@ from database.database import add_user, present_user, del_user, full_userbase
 SECONDS = int(os.getenv("SECONDS", "600"))
 
 # Start command handler
-
-
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     user_id = message.from_user.id
@@ -194,15 +192,13 @@ async def start_command(client: Client, message: Message):
             print(f"Error deleting message: {e}")
     return
 
-
 # =====================================================================================##
 
 WAIT_MSG = """"<b>Processing ...</b>"""
 
-REPLY_ERROR = """<code>Use this command as a replay to any telegram message without any spaces.</code>"""
+REPLY_ERROR = """<code>Use this command as a reply to any telegram message without any spaces.</code>"""
 
 # =====================================================================================##
-
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
@@ -241,15 +237,14 @@ async def not_joined(client: Client, message: Message):
 
 ######## ---------------            USERS USING BOT COMMAND            ---------------########
 
-
 @Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
     users = await full_userbase()
     await msg.edit(f"{len(users)} users are using this bot")
 
-
 ######## ---------------            BROADCAST COMMAND(with BUTTONS)            ---------------########
+
 @Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
     if message.reply_to_message:
@@ -338,3 +333,32 @@ async def send_text(client: Bot, message: Message):
         msg = await message.reply(REPLY_ERROR)
         await asyncio.sleep(8)
         await msg.delete()
+
+# New commands: /help, /owner, /bots
+
+@Bot.on_message(filters.command('help') & filters.private)
+async def help_command(client: Client, message: Message):
+    help_text = (
+        "Here are the available commands:\n\n"
+        "/start - Start the bot. \n"
+        "/help - Show this help message.\n"
+        "/owner - Get information about the bot owner.\n"
+        "/bots - List other bots created by the owner."
+    )
+    await message.reply_text(help_text, quote=True)
+
+@Bot.on_message(filters.command('owner') & filters.private)
+async def owner_command(client: Client, message: Message):
+    # Replace these details with the actual owner's information
+    owner_info = f"<b>○ Creator : <a href='tg://user?id=1196934318'>Ayan</a>\n○ Language : <code>Python 3</code>\n○ Anime Channel: <a href='https://t.me/newanimeshow'>New Anime Shows</a>\n○ Anime Group :<a href='https://t.me/newanimeshowsgroup'> New Anime Shows Group</a>\n○ Helper :<a href='tg://user?id=6965778216'> Helper</a>\n○ Source :<a href='tg://user?id=6965778216'> Click here</a></b>"
+    await update.message.reply_text(help_text, parse_mode='HTML', disable_web_page_preview=True)
+
+@Bot.on_message(filters.command('bots') & filters.private)
+async def bots_command(client: Client, message: Message):
+    # List of other bots created by the owner
+    bots_list = (
+        "Other Bots by the Owner:\n\n"
+        "1. ANIME BOT - Provides a wide range of knowledge about animes, get weekly top, trending anime lists.\n"
+        "2. FRIDAY - @ERGOPHILE_BOT It is a file sharing bot.\n"
+    )
+    await message.reply_text(bots_list, quote=True)
