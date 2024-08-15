@@ -182,7 +182,7 @@ async def start_command(client: Client, message: Message):
 
     else:
         # No files found, inform the user
-        sent_msg = await message.reply_text("𝗬𝗢𝗨 𝗔𝗥𝗘 𝗟𝗔𝗧𝗘, 𝗚𝗘𝗧 𝗜𝗡 𝗛𝗘𝗥𝗘 𝗜𝗡 𝗧𝗜𝗠𝗘!! \n\n 𝗜𝗙 𝗙𝗜𝗟𝗘 𝗜𝗦 𝗡𝗢𝗧 𝗦𝗛𝗢𝗪𝗜𝗡𝗚, 𝗪𝗔𝗜𝗧 𝗔𝗡𝗗 𝗧𝗥𝗬 𝗔𝗚𝗔𝗜𝗡 𝗢𝗥 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 <a href='https://web.telegram.org/a/#6965778216'>@𝗛𝗘𝗟𝗣𝗘𝗥</a>")
+        sent_msg = await message.reply_text("𝗬𝗢𝗨 𝗔𝗥𝗘 𝗟𝗔𝗧𝗘, 𝗚𝗘𝗧 𝗜𝗡 𝗛𝗘𝗥𝗘 𝗜𝗡 𝗧𝗜𝗠𝗘!! \n\n 𝗜𝗙 𝗙𝗜𝗟𝗘 𝗜𝗦 𝗡𝗢𝗧 𝗦𝗛𝗢𝗪𝗜𝗡𝗚, 𝗪𝗔𝗜𝗧 𝗔𝗡𝗗 𝗧𝗥𝗬 𝗔𝗚𝗔𝗜𝗡 𝗢𝗥 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 <a href='https://web.telegram.org/a/#6965778216'>@𝗛𝗘𝗟𝗣𝗘𝗥</a>", disable_web_page_preview=True))
 
         # Auto delete the message after 7 seconds
         await asyncio.sleep(7)
