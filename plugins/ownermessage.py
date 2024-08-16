@@ -30,7 +30,7 @@ async def owner_msg_command(client: Client, message: Message):
     await message.reply_text(
         f"👋 Hey {user_mention},\n\nClick the button below and send your message to the owner.",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton(<a href='tg://user?id=1196934318'>✨ Continue ✨</a>, callback_data="continue")]]
+            <a href='tg://user?id=1196934318'>[[InlineKeyboardButton("✨ Continue ✨", callback_data="continue")</a>]]
         ),
         parse_mode=ParseMode.HTML
     )
