@@ -13,7 +13,7 @@ async def help_command(client: Client, message: Message):
 
 - <b>/start</b> - Start the bot.
 - <b>/help</b> - Show this help message.
-- <b>/owner</b> - Get information about the bot owner.
+- <b>/owner</b> - Get info about the bot owner.
 - <b>/bots</b> - List other bots created by the owner.
     """
     await message.reply_text(
@@ -62,8 +62,8 @@ async def owner_command(client: Client, message: Message):
     owner_info = """
 <b>✨ Bot Owner:</b> ✨
 
-👤 <b>Name:</b> [Owner Name]
-📧 <b>Contact:</b> [Owner's Contact Info]
+👤 <b>Name:</b> Ayan
+📧 <b>Contact:</b> <a href='tg://user?id=1196934318'>@Ayan</a>
 
 For more bots, type <b>/bots</b>.
     """
