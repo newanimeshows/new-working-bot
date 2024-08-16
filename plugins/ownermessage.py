@@ -15,6 +15,7 @@ async def help_command(client: Client, message: Message):
 - <b>/help</b> - Show this help message.
 - <b>/owner</b> - Get info about the bot owner.
 - <b>/bots</b> - List other bots created by the owner.
+- <b>/owner_msg</b> - Get in touch with the bot owner.
     """
     await message.reply_text(
         help_text,
