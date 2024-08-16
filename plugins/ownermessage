@@ -5,7 +5,7 @@ from pyrogram.enums import ParseMode
 from bot import Bot
 from config import OWNER_ID  # Ensure that OWNER_ID is defined in your config.py
 
-# Handler for /help command
+# /help command
 @Bot.on_message(filters.command('help') & filters.private)
 async def help_command(client: Client, message: Message):
     help_text = """
@@ -21,7 +21,7 @@ async def help_command(client: Client, message: Message):
         parse_mode=ParseMode.MARKDOWN
     )
 
-# Handler for /owner_msg command
+# /owner_msg command
 @Bot.on_message(filters.command('owner_msg') & filters.private)
 async def owner_msg_command(client: Client, message: Message):
     user_mention = message.from_user.mention
@@ -34,16 +34,16 @@ async def owner_msg_command(client: Client, message: Message):
         parse_mode=ParseMode.MARKDOWN
     )
 
-# Callback query handler for the Continue button
+# Callback query handler for the "Continue" button
 @Bot.on_callback_query(filters.regex("continue"))
 async def continue_callback(client: Client, callback_query: CallbackQuery):
     await callback_query.message.edit_text(
         "Please send me the message you'd like to send to the owner."
     )
 
-    # Listen for the next message from the user
-    @Bot.on_message(filters.private & filters.reply, group=1)
-    async def forward_to_owner(client: Client, message: Message):
+    # Create a handler to capture the next message
+    @Bot.on_message(filters.private & filters.text & ~filters.command)
+    async def capture_message(client: Client, message: Message):
         if message.reply_to_message and message.reply_to_message.text == "Please send me the message you'd like to send to the owner.":
             # Forward the user's message to the owner
             await client.send_message(
@@ -53,10 +53,10 @@ async def continue_callback(client: Client, callback_query: CallbackQuery):
             )
             await message.reply("Your message has been sent to the owner. Thank you!")
 
-            # Remove the message listener after it's used
-            Bot.remove_handler(forward_to_owner, group=1)
+            # Remove the capture_message handler after it has been used
+            Bot.remove_handler(capture_message, group=0)
 
-# Handler for /owner command
+# /owner command
 @Bot.on_message(filters.command('owner') & filters.private)
 async def owner_command(client: Client, message: Message):
     owner_info = """
