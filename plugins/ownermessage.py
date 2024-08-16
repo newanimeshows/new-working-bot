@@ -31,7 +31,7 @@ async def owner_msg_command(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("✨ Continue ✨", callback_data="continue")]]
         ),
-        parse_mode=ParseMode.MARKDOWN
+        parse_mode='HTML', disable_web_page_preview=True)
     )
 
 # Callback query handler for the "Continue" button
