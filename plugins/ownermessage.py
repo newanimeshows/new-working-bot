@@ -4,11 +4,12 @@ from pyrogram.enums import ParseMode
 from bot import Bot
 from config import OWNER_ID
 
-# Set to track users who are expected to send a message to the owner
+
+Bot = Client("my_bot")
+
 pending_users = set()
 
-# /help command
-@Bot.on_message(filters.command('help') & filters.private)
+@Bot.on_message(filters.command(['help']) & filters.private)
 async def help_command(client: Client, message: Message):
     help_text = """
 <b>✨ Here are the available commands:</b> ✨
@@ -24,8 +25,7 @@ async def help_command(client: Client, message: Message):
         parse_mode=ParseMode.HTML
     )
 
-# /owner_msg command
-@Bot.on_message(filters.command('owner_msg') & filters.private)
+@Bot.on_message(filters.command(['owner_msg']) & filters.private)
 async def owner_msg_command(client: Client, message: Message):
     user_id = message.from_user.id
     user_mention = message.from_user.mention
@@ -42,15 +42,13 @@ async def owner_msg_command(client: Client, message: Message):
             parse_mode=ParseMode.HTML
         )
 
-# Message handler to capture messages from users in pending_users
-@Bot.on_message(filters.private & filters.text & ~filters.commands())
+@Bot.on_message(filters.private & filters.text & ~filters.command(['owner_msg']))
 async def forward_to_owner(client: Client, message: Message):
     user_id = message.from_user.id
     if user_id in pending_users:
         user_mention = message.from_user.mention
         user_username = f"@{message.from_user.username}" if message.from_user.username else "No Username"
 
-        # Forward the user's message to the owner
         forwarded_message = f"""
 <b>📩 New Message from {user_mention}</b>
 <b>🆔 User ID:</b> <code>{user_id}</code>
@@ -78,14 +76,12 @@ async def forward_to_owner(client: Client, message: Message):
         finally:
             pending_users.remove(user_id)
     else:
-        # If the user hasn't initiated /owner_msg, ignore or handle accordingly
         await message.reply_text(
             "⚠️ To send a message to the owner, please use the /owner_msg command first.",
             parse_mode=ParseMode.HTML
         )
 
-# /owner command
-@Bot.on_message(filters.command('owner') & filters.private)
+@Bot.on_message(filters.command(['owner']) & filters.private)
 async def owner_command(client: Client, message: Message):
     owner_info = """
 <b>✨ Bot Owner:</b> ✨
@@ -99,3 +95,4 @@ For more bots, type <b>/bots</b>.
         owner_info,
         parse_mode=ParseMode.HTML
     )
+
