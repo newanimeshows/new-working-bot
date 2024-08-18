@@ -43,7 +43,7 @@ async def owner_msg_command(client: Client, message: Message):
         )
 
 # Message handler to capture messages from users in pending_users
-@Bot.on_message(filters.private & filters.text & ~filters.command())
+@Bot.on_message(filters.private & filters.text & ~filters.commands())
 async def forward_to_owner(client: Client, message: Message):
     user_id = message.from_user.id
     if user_id in pending_users:
