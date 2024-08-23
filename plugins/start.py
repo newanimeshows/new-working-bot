@@ -1,3 +1,4 @@
+
 import os
 import asyncio
 from pyrogram import Client, filters
@@ -11,6 +12,7 @@ from database.database import add_user, present_user, del_user, full_userbase
 
 # Add time in seconds for waiting before deleting
 SECONDS = int(os.getenv("SECONDS", "600"))
+print(f"Seconds set for deletion: {SECONDS}")
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
@@ -22,7 +24,6 @@ async def start_command(client: Client, message: Message):
             await add_user(user_id)
         except Exception as e:
             print(f"Error adding user: {e}")
-            pass
 
     text = message.text
 
@@ -88,13 +89,14 @@ async def start_command(client: Client, message: Message):
                     snt_msgs.append(snt_msg)
                 except Exception as e:
                     print(f"Error copying message: {e}")
-                    pass
-            
+
             k = await message.reply_text(
                 "<b>𝐀𝐭𝐭𝐞𝐧𝐭𝐢𝐨𝐧! 🚨</b>\n\n 🌸 𝐃𝐮𝐞 𝐓𝐨 𝘾𝙤𝙥𝙮𝙧𝙞𝙜𝙝𝙩 𝙄𝙨𝙨𝙪𝙚𝙨, 𝐅𝐢𝐥𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐝𝐞𝐥𝐞𝐭𝐞𝐝 𝐢𝐧 10 𝐦𝐢𝐧𝐮𝐭𝐞𝐬!\n\n 🌸 𝙎𝗮𝘃𝗲 𝗧𝗵𝗲𝘀𝗲 𝗙𝗶𝗹𝗲𝘀 𝗜𝗻 𝗬𝗼𝘂𝗿 𝗦𝗮𝘃𝗲𝗱 𝗠𝗲𝘀𝘀𝗮𝗴𝗲𝘀! 📂\n\n  🌸 𝗠𝘂𝘀𝘁 𝗝𝗼𝗶𝗻 <a href='https://t.me/newanimeshow'>@𝙉𝙚𝙬_𝘼𝙣𝙞𝙢𝙚_𝙎𝙝𝙤𝙬𝙨 </a>𝗔𝗻𝗱 <a href='https://t.me/newanimeshowsgroup'>@𝘼𝙣𝙞𝙢𝙚_𝙂𝙧𝙤𝙪𝙥</a> 𝗧𝗼 𝗨𝘀𝗲 𝗠𝗲..! ✨",
                 disable_web_page_preview=True
             )
             await asyncio.sleep(SECONDS)
+
+            print(f"Deleting messages after {SECONDS} seconds")
 
             for snt_msg in snt_msgs:
                 try:
@@ -102,8 +104,6 @@ async def start_command(client: Client, message: Message):
                     await k.edit_text("𝗧𝗛𝗘 𝗙𝗜𝗟𝗘𝗦 𝗛𝗔𝗦 𝗕𝗘𝗘𝗡 𝗗𝗘𝗟𝗘𝗧𝗘𝗗!!")
                 except Exception as e:
                     print(f"Error deleting message: {e}")
-                    pass
-            return
 
         except Exception as e:
             print(f"Error in command processing: {e}")
@@ -132,4 +132,4 @@ async def start_command(client: Client, message: Message):
             disable_web_page_preview=True,
             quote=True
         )
-        return
+
