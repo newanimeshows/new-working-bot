@@ -1,6 +1,6 @@
 import os
 import asyncio
-from pyrogram import Client, filters, __version__
+from pyrogram import Client, filters, version
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
@@ -12,7 +12,6 @@ from database.database import add_user, present_user, del_user, full_userbase
 # Add time in seconds for waiting before deleting
 SECONDS = int(os.getenv("SECONDS", "600"))
 
-# Start command handler
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     user_id = message.from_user.id
@@ -21,7 +20,8 @@ async def start_command(client: Client, message: Message):
     if not await present_user(user_id):
         try:
             await add_user(user_id)
-        except:
+        except Exception as e:
+            print(f"Error adding user: {e}")
             pass
 
     text = message.text
@@ -37,7 +37,6 @@ async def start_command(client: Client, message: Message):
                     start = int(int(argument[1]) / abs(client.db_channel.id))
                     end = int(int(argument[2]) / abs(client.db_channel.id))
                     ids = range(start, end + 1) if start <= end else []
-
                 except Exception as e:
                     print(f"Error parsing argument: {e}")
                     return
@@ -45,61 +44,79 @@ async def start_command(client: Client, message: Message):
             elif len(argument) == 2:
                 try:
                     ids = [int(int(argument[1]) / abs(client.db_channel.id))]
-                except:
-                    return  # Corrected indentation level
+                except Exception as e:
+                    print(f"Error parsing argument: {e}")
+                    return
 
-        temp_msg = await message.reply("Wait A Second...")
-        try:
-            messages = await get_messages(client, ids)
-        except:
+            temp_msg = await message.reply("Wait A Second...")
+            try:
+                messages = await get_messages(client, ids)
+            except Exception as e:
+                await message.reply_text("Something went wrong..!")
+                return
+            await temp_msg.delete()
+            
+            snt_msgs = []
+            
+            for msg in messages:
+                caption = CUSTOM_CAPTION.format(
+                    previouscaption="" if not msg.caption else msg.caption.html,
+                    filename=msg.document.file_name
+                ) if bool(CUSTOM_CAPTION) and bool(msg.document) else "" if not msg.caption else msg.caption.html
+
+                reply_markup = msg.reply_markup if not DISABLE_CHANNEL_BUTTON else None
+
+                try:
+                    snt_msg = await msg.copy(
+                        chat_id=message.from_user.id,
+                        caption=caption,
+                        parse_mode=ParseMode.HTML,
+                        reply_markup=reply_markup,
+                        protect_content=PROTECT_CONTENT
+                    )
+                    await asyncio.sleep(0.5)
+                    snt_msgs.append(snt_msg)
+                except FloodWait as e:
+                    await asyncio.sleep(e.x)
+                    snt_msg = await msg.copy(
+                        chat_id=message.from_user.id,
+                        caption=caption,
+                        parse_mode=ParseMode.HTML,
+                        reply_markup=reply_markup,
+                        protect_content=PROTECT_CONTENT
+                    )
+                    snt_msgs.append(snt_msg)
+                except Exception as e:
+                    print(f"Error copying message: {e}")
+                    pass
+                
+            k = await message.reply_text(
+                "<b>𝐀𝐭𝐭𝐞𝐧𝐭𝐢𝐨𝐧! 🚨</b>\n\n 🌸 𝐃𝐮𝐞 𝐓𝐨 𝘾𝙤𝙥𝙮𝙧𝙞𝙜𝙝𝙩 𝙄𝙨𝙨𝙪𝙚𝙨, 𝐅𝐢𝐥𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐝𝐞𝐥𝐞𝐭𝐞𝐝 𝐢𝐧 10 𝐦𝐢𝐧𝐮𝐭𝐞𝐬!\n\n 🌸 𝙎𝗮𝘃𝗲 𝗧𝗵𝗲𝘀𝗲 𝗙𝗶𝗹𝗲𝘀 𝗜𝗻 𝗬𝗼𝘂𝗿 𝗦𝗮𝘃𝗲𝗱 𝗠𝗲𝘀𝘀𝗮𝗴𝗲𝘀! 📂\n\n  🌸 𝗠𝘂𝘀𝘁 𝗝𝗼𝗶𝗻 <a href='https://t.me/newanimeshow'>@𝙉𝙚𝙬_𝘼𝙣𝙞𝙢𝙚_𝙎𝙝𝙤𝙬𝙨 </a>𝗔𝗻𝗱 <a href='https://t.me/newanimeshowsgroup'>@𝘼𝙣𝙞𝙢𝙚_𝙂𝙧𝙤𝙪𝙥</a> 𝗧𝗼 𝗨𝘀𝗲 𝗠𝗲..! ✨",
+                disable_web_page_preview=True
+            )
+            await asyncio.sleep(SECONDS)
+
+            for snt_msg in snt_msgs:
+                try:
+                    await snt_msg.delete()
+                    await k.edit_text("𝗧𝗛𝗘 𝗙𝗜𝗟𝗘𝗦 𝗛𝗔𝗦 𝗕𝗘𝗘𝗡 𝗗𝗘𝗟𝗘𝗧𝗘𝗗!!")
+                except Exception as e:
+                    print(f"Error deleting message: {e}")
+                    pass
+            return
+
+        except Exception as e:
+            print(f"Error in command processing: {e}")
             await message.reply_text("Something went wrong..!")
             return
-        await temp_msg.delete()
-        
-        snt_msgs = []
-        
-        for msg in messages:
-            if bool(CUSTOM_CAPTION) & bool(msg.document):
-                caption = CUSTOM_CAPTION.format(previouscaption="" if not msg.caption else msg.caption.html, filename=msg.document.file_name)
-            else:
-                caption = "" if not msg.caption else msg.caption.html
-
-            if DISABLE_CHANNEL_BUTTON:
-                reply_markup = msg.reply_markup
-            else:
-                reply_markup = None
-
-            try:
-                snt_msg = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
-                await asyncio.sleep(0.5)
-                snt_msgs.append(snt_msg)
-            except FloodWait as e:
-                await asyncio.sleep(e.x)
-                snt_msg = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
-                snt_msgs.append(snt_msg)
-            except:
-                pass
-                
-        k = await message.reply_text("<b>𝐀𝐭𝐭𝐞𝐧𝐭𝐢𝐨𝐧! 🚨</b>\n\n 🌸 𝐃𝐮𝐞 𝐓𝐨 𝘾𝙤𝙥𝙮𝙧𝙞𝙜𝙝𝙩 𝙄𝙨𝙨𝙪𝙚𝙨, 𝐅𝐢𝐥𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐝𝐞𝐥𝐞𝐭𝐞𝐝 𝐢𝐧 10 𝐦𝐢𝐧𝐮𝐭𝐞𝐬!\n\n 🌸 𝙎𝗮𝘃𝗲 𝗧𝗵𝗲𝘀𝗲 𝗙𝗶𝗹𝗲𝘀 𝗜𝗻 𝗬𝗼𝘂𝗿 𝗦𝗮𝘃𝗲𝗱 𝗠𝗲𝘀𝘀𝗮𝗴𝗲𝘀! 📂\n\n  🌸 𝗠𝘂𝘀𝘁 𝗝𝗼𝗶𝗻 <a href='https://t.me/newanimeshow'>@𝙉𝙚𝙬_𝘼𝙣𝙞𝙢𝙚_𝙎𝙝𝙤𝙬𝙨 </a>𝗔𝗻𝗱 <a href='https://t.me/newanimeshowsgroup'>@𝘼𝙣𝙞𝙢𝙚_𝙂𝙧𝙤𝙪𝙥</a> 𝗧𝗼 𝗨𝘀𝗲 𝗠𝗲..! ✨", disable_web_page_preview=True)
-        await asyncio.sleep(SECONDS)
-
-        for snt_msg in snt_msgs:
-            try:
-                await snt_msg.delete()
-                await k.edit_text("𝗧𝗛𝗘 𝗙𝗜𝗟𝗘𝗦 𝗛𝗔𝗦 𝗕𝗘𝗘𝗡 𝗗𝗘𝗟𝗘𝗧𝗘𝗗!!")
-            except:
-                pass
-        return
 
     else:
-        # No command with arguments, handle the 'else' block
+        # Handle 'else' case
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
-                        "ᴀʙᴏᴜᴛ", callback_data="about"),
-                    InlineKeyboardButton(
-                        "ᴄʟᴏꜱᴇ", callback_data="close")
+                    InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about"),
+                    InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data="close")
                 ]
             ]
         )
@@ -116,148 +133,3 @@ async def start_command(client: Client, message: Message):
             quote=True
         )
         return
-
-
-# =====================================================================================##
-
-WAIT_MSG = """<b>Processing ...</b>"""
-
-REPLY_ERROR = """<code>Use this command as a replay to any telegram message without any spaces.</code>"""
-
-# =====================================================================================##
-
-
-@Bot.on_message(filters.command('start') & filters.private)
-async def not_joined(client: Client, message: Message):
-    buttons = [
-        [
-            InlineKeyboardButton(text="⚡️ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ⚡️", url=client.invitelink),
-            InlineKeyboardButton(text="⚡️ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ⚡️", url=client.invitelink2),
-        ]
-    ]
-
-    try:
-        buttons.append(
-            [
-                InlineKeyboardButton(
-                    text='𝐓𝐫𝐲 𝐀𝐠𝐚𝐢𝐧',
-                    url=f"https://t.me/{client.username}?start={message.command[1]}"
-                )
-            ]
-        )
-    except IndexError:
-        pass
-
-    await message.reply(
-        text=FORCE_MSG.format(
-            first=message.from_user.first_name,
-            last=message.from_user.last_name,
-            username=None if not message.from_user.username else '@' + message.from_user.username,
-            mention=message.from_user.mention,
-            id=message.from_user.id
-        ),
-        reply_markup=InlineKeyboardMarkup(buttons),
-        quote=True,
-        disable_web_page_preview=True
-    )
-
-
-######## ---------------            USERS USING BOT COMMAND            ---------------########
-
-
-@Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
-async def get_users(client: Bot, message: Message):
-    msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
-    users = await full_userbase()
-    await msg.edit(f"{len(users)} users are using this bot")
-
-
-######## ---------------            BROADCAST COMMAND(with BUTTONS)            ---------------########
-@Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
-async def send_text(client: Bot, message: Message):
-    if message.reply_to_message:
-        # Retrieve user base to broadcast messages to
-        query = await full_userbase()
-
-        # Get the message to be broadcasted
-        broadcast_msg = message.reply_to_message
-
-        # Initialize counters for statistics
-        total = 0
-        successful = 0
-        blocked = 0
-        deleted = 0
-        unsuccessful = 0
-
-        # Ask for buttons (optional)
-        try:
-            buttons_message = await client.ask(
-                text="Please send the button text and URL in this format: \nButtonText1:URL1 \nButtonText2:URL2\n\nOr type 'skip' to skip adding buttons.",
-                chat_id=message.from_user.id,
-                timeout=600
-            )
-        except asyncio.TimeoutError:
-            await message.reply("⏳ Time ran out. Proceeding without adding buttons.")
-            buttons_message = None
-
-        buttons = []
-        if buttons_message and buttons_message.text.strip().lower() != 'skip':
-            # Parse button text and URLs
-            button_pairs = buttons_message.text.split(',')
-            for pair in button_pairs:
-                # Split once to handle cases where URLs contain ':'
-                parts = pair.split(':', 1)
-                if len(parts) == 2:
-                    text, url = parts
-                    buttons.append(
-                        [InlineKeyboardButton(text.strip(), url=url.strip())])
-
-        # Prepare reply markup with buttons
-        reply_markup = InlineKeyboardMarkup(buttons) if buttons else None
-
-        # Notify users about the broadcasting process
-        pls_wait = await message.reply("<i>Broadcasting Message.. This will Take Some Time</i>", reply_markup=reply_markup)
-
-        # Iterate over each user and attempt to send the broadcast message
-        for chat_id in query:
-            try:
-                # Send message with buttons
-                await broadcast_msg.copy(chat_id, reply_markup=reply_markup)
-                successful += 1
-            except FloodWait as e:
-                # Handle FloodWait exceptions by waiting and retrying
-                await asyncio.sleep(e.x)
-                await broadcast_msg.copy(chat_id, reply_markup=reply_markup)
-                successful += 1
-            except UserIsBlocked:
-                # Handle blocked users by removing them from the user base
-                await del_user(chat_id)
-                blocked += 1
-            except InputUserDeactivated:
-                # Handle deactivated accounts by removing them from the user base
-                await del_user(chat_id)
-                deleted += 1
-            except Exception as ex:
-                # Handle other exceptions (unsuccessful attempts)
-                unsuccessful += 1
-                print(f"Failed to broadcast to {chat_id}: {ex}")
-
-            # Increment total users counter
-            total += 1
-
-        # Format and edit the initial "Please wait" message to show broadcast statistics
-        status = f"""<b><u>Broadcast Completed</u></b>
-
-<b>Total Users:</b> <code>{total}</code>
-<b>Successful:</b> <code>{successful}</code>
-<b>Blocked Users:</b> <code>{blocked}</code>
-<b>Deleted Accounts:</b> <code>{deleted}</code>
-<b>Unsuccessful:</b> <code>{unsuccessful}</code>"""
-
-        await pls_wait.edit(status)
-
-    else:
-        # If not used as a reply, reply with an error message after a delay
-        msg = await message.reply(REPLY_ERROR)
-        await asyncio.sleep(8)
-        await msg.delete()
