@@ -13,8 +13,6 @@ from database.database import add_user, present_user, del_user, full_userbase
 SECONDS = int(os.getenv("SECONDS", "600"))
 
 # Start command handler
-
-
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     user_id = message.from_user.id
@@ -48,7 +46,8 @@ async def start_command(client: Client, message: Message):
                 try:
                     ids = [int(int(argument[1]) / abs(client.db_channel.id))]
                 except:
-               return
+                    return  # Corrected indentation level
+
         temp_msg = await message.reply("Wait A Second...")
         try:
             messages = await get_messages(client, ids)
@@ -60,9 +59,8 @@ async def start_command(client: Client, message: Message):
         snt_msgs = []
         
         for msg in messages:
-
             if bool(CUSTOM_CAPTION) & bool(msg.document):
-                caption = CUSTOM_CAPTION.format(previouscaption = "" if not msg.caption else msg.caption.html, filename = msg.document.file_name)
+                caption = CUSTOM_CAPTION.format(previouscaption="" if not msg.caption else msg.caption.html, filename=msg.document.file_name)
             else:
                 caption = "" if not msg.caption else msg.caption.html
 
@@ -72,12 +70,12 @@ async def start_command(client: Client, message: Message):
                 reply_markup = None
 
             try:
-                snt_msg = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                snt_msg = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
                 await asyncio.sleep(0.5)
                 snt_msgs.append(snt_msg)
             except FloodWait as e:
                 await asyncio.sleep(e.x)
-                snt_msg = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                snt_msg = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
                 snt_msgs.append(snt_msg)
             except:
                 pass
@@ -122,7 +120,7 @@ async def start_command(client: Client, message: Message):
 
 # =====================================================================================##
 
-WAIT_MSG = """"<b>Processing ...</b>"""
+WAIT_MSG = """<b>Processing ...</b>"""
 
 REPLY_ERROR = """<code>Use this command as a replay to any telegram message without any spaces.</code>"""
 
@@ -134,8 +132,7 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(text="⚡️ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ⚡️", url=client.invitelink),
-            InlineKeyboardButton(text="⚡️ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ⚡️",
-                                 url=client.invitelink2),
+            InlineKeyboardButton(text="⚡️ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ⚡️", url=client.invitelink2),
         ]
     ]
 
@@ -163,6 +160,7 @@ async def not_joined(client: Client, message: Message):
         quote=True,
         disable_web_page_preview=True
     )
+
 
 ######## ---------------            USERS USING BOT COMMAND            ---------------########
 
