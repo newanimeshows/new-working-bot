@@ -81,13 +81,13 @@ async def start_command(client: Client, message: Message):
                 except:
                     pass
 
-            SD = await message.reply_text("<b><u>❗Important❗</u></b><b><i>\nDarling !!\nAll the files messages will be deleted after 5 minutes. Please save or forward this media messages to your personal saved messages to avoid losing them! 🥺✨</i></b>")
+            SD = await message.reply_text("<b>𝐀𝐭𝐭𝐞𝐧𝐭𝐢𝐨𝐧! 🚨</b>\n\n 🌸 𝐃𝐮𝐞 𝐓𝐨 𝘾𝙤𝙥𝙮𝙧𝙞𝙜𝙝𝙩 𝙄𝙨𝙨𝙪𝙚𝙨, 𝐅𝐢𝐥𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐝𝐞𝐥𝐞𝐭𝐞𝐝 𝐢𝐧 10 𝐦𝐢𝐧𝐮𝐭𝐞𝐬!\n\n 🌸 𝙎𝗮𝘃𝗲 𝗧𝗵𝗲𝘀𝗲 𝗙𝗶𝗹𝗲𝘀 𝗜𝗻 𝗬𝗼𝘂𝗿 𝗦𝗮𝘃𝗲𝗱 𝗠𝗲𝘀𝘀𝗮𝗴𝗲𝘀! 📂\n\n  🌸 𝗠𝘂𝘀𝘁 𝗝𝗼𝗶𝗻 <a href='https://t.me/newanimeshow'>@𝙉𝙚𝙬_𝘼𝙣𝙞𝙢𝙚_𝙎𝙝𝙤𝙬𝙨 </a>𝗔𝗻𝗱 <a href='https://t.me/newanimeshowsgroup'>@𝘼𝙣𝙞𝙢𝙚_𝙂𝙧𝙤𝙪𝙥</a> 𝗧𝗼 𝗨𝘀𝗲 𝗠𝗲..! ✨", disable_web_page_preview=True)
             await asyncio.sleep(SECONDS)
 
             for snt_msg in snt_msgs:
                 try:
                     await snt_msg.delete()
-                    await SD.delete()
+                    await SD.edit_text("𝗧𝗛𝗘 𝗙𝗜𝗟𝗘𝗦 𝗛𝗔𝗦 𝗕𝗘𝗘𝗡 𝗗𝗘𝗟𝗘𝗧𝗘𝗗!!")
                 except:
                     pass
     else:
@@ -115,116 +115,6 @@ async def start_command(client: Client, message: Message):
             quote=True
         )
         return
-
-    # Notify user that content is being prepared
-    temp_msg = await message.reply("!! ᴄᴏɴᴛᴇɴᴛ ᴠᴇᴛᴛɪɴɢ !!")
-
-    try:
-        messages = await get_messages(client, ids)
-
-    except Exception as e:
-        print(f"Error fetching messages: {e}")
-        await temp_msg.edit_text("ᴇʀʀᴏʀ ꜰᴇᴛᴄʜɪɴɢ ᴄᴏɴᴛᴇɴᴛ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ.")
-        return
-
-    if not messages:
-        sent_msg = await message.reply_text("𝗬𝗢𝗨 𝗔𝗥𝗘 𝗟𝗔𝗧𝗘, 𝗚𝗘𝗧 𝗜𝗡 𝗛𝗘𝗥𝗘 𝗜𝗡 𝗧𝗜𝗠𝗘!!")
-
-        # Auto delete the message after 7 seconds
-        await asyncio.sleep(7)
-        try:
-            await sent_msg.delete()
-        except Exception as e:
-            print(f"Error deleting message: {e}")
-
-        return
-
-    # Delete the temporary message before sharing files
-    await temp_msg.delete()
-
-    sent_messages = []
-    found_files = False
-
-    for msg in messages:
-        # Check if the message is empty (no document)
-        if msg.document is None:
-            # Skip empty files
-            continue
-
-        found_files = True
-
-        # Generate caption based on configuration
-        if bool(CUSTOM_CAPTION) and bool(msg.document):
-            caption = CUSTOM_CAPTION.format(
-                previouscaption="" if not msg.caption else msg.caption.html,
-                filename=msg.document.file_name
-            )
-        else:
-            caption = "" if not msg.caption else msg.caption.html
-
-        # Determine reply markup based on configuration
-        if DISABLE_CHANNEL_BUTTON:
-            reply_markup = msg.reply_markup
-        else:
-            reply_markup = None
-
-        try:
-            # Copy message to user with specified settings
-            copied_msg = await msg.copy(
-                chat_id=message.from_user.id,
-                caption=caption,
-                parse_mode=ParseMode.HTML,
-                reply_markup=reply_markup,
-                protect_content=PROTECT_CONTENT
-            )
-            sent_messages.append(copied_msg)
-
-        except FloodWait as e:
-            await asyncio.sleep(e.x)
-            copied_msg = await msg.copy(
-                chat_id=message.from_user.id,
-                caption=caption,
-                parse_mode=ParseMode.HTML,
-                reply_markup=reply_markup,
-                protect_content=PROTECT_CONTENT
-            )
-            sent_messages.append(copied_msg)
-
-        except:
-            pass
-
-    if found_files:
-        # Notify the user about the deletion process and wait before deletion
-        deletion_msg = await client.send_message(
-            chat_id=message.from_user.id,
-            text="<b>𝐀𝐭𝐭𝐞𝐧𝐭𝐢𝐨𝐧! 🚨</b>\n\n 🌸 𝐃𝐮𝐞 𝐓𝐨 𝘾𝙤𝙥𝙮𝙧𝙞𝙜𝙝𝙩 𝙄𝙨𝙨𝙪𝙚𝙨, 𝐅𝐢𝐥𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐝𝐞𝐥𝐞𝐭𝐞𝐝 𝐢𝐧 10 𝐦𝐢𝐧𝐮𝐭𝐞𝐬!\n\n 🌸 𝙎𝗮𝘃𝗲 𝗧𝗵𝗲𝘀𝗲 𝗙𝗶𝗹𝗲𝘀 𝗜𝗻 𝗬𝗼𝘂𝗿 𝗦𝗮𝘃𝗲𝗱 𝗠𝗲𝘀𝘀𝗮𝗴𝗲𝘀! 📂\n\n  🌸 𝗠𝘂𝘀𝘁 𝗝𝗼𝗶𝗻 <a href='https://t.me/newanimeshow'>@𝙉𝙚𝙬_𝘼𝙣𝙞𝙢𝙚_𝙎𝙝𝙤𝙬𝙨 </a>𝗔𝗻𝗱 <a href='https://t.me/newanimeshowsgroup'>@𝘼𝙣𝙞𝙢𝙚_𝙂𝙧𝙤𝙪𝙥</a> 𝗧𝗼 𝗨𝘀𝗲 𝗠𝗲..! ✨", disable_web_page_preview=True)
-
-        await asyncio.sleep(SECONDS)
-
-        # Delete each sent message and update the user
-        for msg in sent_messages:
-            try:
-                await msg.delete()
-
-            except Exception as e:
-                print(f"Error deleting message: {e}")
-                pass
-
-        # Inform user about completion of deletion process
-        await deletion_msg.edit_text("𝗧𝗛𝗘 𝗙𝗜𝗟𝗘𝗦 𝗛𝗔𝗦 𝗕𝗘𝗘𝗡 𝗗𝗘𝗟𝗘𝗧𝗘𝗗!!")
-
-    else:
-        # No files found, inform the user
-        sent_msg = await message.reply_text("𝗬𝗢𝗨 𝗔𝗥𝗘 𝗟𝗔𝗧𝗘, 𝗚𝗘𝗧 𝗜𝗡 𝗛𝗘𝗥𝗘 𝗜𝗡 𝗧𝗜𝗠𝗘!! \n\n 𝗜𝗙 𝗙𝗜𝗟𝗘 𝗜𝗦 𝗡𝗢𝗧 𝗦𝗛𝗢𝗪𝗜𝗡𝗚, 𝗪𝗔𝗜𝗧 𝗔𝗡𝗗 𝗧𝗥𝗬 𝗔𝗚𝗔𝗜𝗡 𝗢𝗥 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 <a href='https://web.telegram.org/a/#6965778216'>@𝗛𝗘𝗟𝗣𝗘𝗥</a>")
-
-        # Auto delete the message after 7 seconds
-        await asyncio.sleep(7)
-        try:
-            await sent_msg.delete()
-        except Exception as e:
-            print(f"Error deleting message: {e}")
-    return
-
 
 # =====================================================================================##
 
